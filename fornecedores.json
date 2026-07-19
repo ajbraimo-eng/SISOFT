@@ -1,0 +1,18 @@
+{
+  "fornecedores": [
+    {
+      "id": 1,
+      "name": "sisoft",
+      "phone": "849835381",
+      "email": "sisoft@gmail.com",
+      "nuit": "765347621",
+      "contact": "861212122",
+      "address": "Nampula",
+      "notes": "",
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-17T03:12:48.020Z",
+      "updated_at": "2026-07-17T03:12:48.020Z"
+    }
+  ]
+}

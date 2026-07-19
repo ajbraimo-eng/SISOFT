@@ -1,0 +1,19 @@
+{
+  "name": "stock-system",
+  "version": "1.0.0",
+  "description": "Sistema simples de stock com API e frontend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:lan": "node server.js",
+    "start:app": "node launcher.js",
+    "build:installer": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-installer.ps1",
+    "build:android": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-android.ps1"
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "^13.3.0",
+    "@simplewebauthn/server": "^13.3.2",
+    "express": "^4.18.2",
+    "pdfkit": "^0.19.1"
+  }
+}

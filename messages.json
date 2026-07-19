@@ -1,0 +1,281 @@
+{
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "fullName": "Assanito Joao Braimo",
+      "username": "Sanito",
+      "text": "peco oleo",
+      "created_at": "2026-07-13T06:50:40.214Z",
+      "replyTo": null,
+      "views": [
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "viewedAt": "2026-07-13T06:50:40.247Z"
+        },
+        {
+          "userId": 3,
+          "fullName": "Furaha Mukamana",
+          "username": "Furaha",
+          "viewedAt": "2026-07-13T06:51:52.192Z"
+        },
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "viewedAt": "2026-07-13T09:14:59.529Z"
+        }
+      ],
+      "oks": [
+        {
+          "userId": 3,
+          "fullName": "Furaha Mukamana",
+          "username": "Furaha",
+          "okAt": "2026-07-13T06:51:52.192Z"
+        },
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "okAt": "2026-07-13T09:14:59.529Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "fullName": "Furaha Mukamana",
+      "username": "Furaha",
+      "text": "oleo",
+      "created_at": "2026-07-13T11:54:21.713Z",
+      "replyTo": null,
+      "views": [
+        {
+          "userId": 3,
+          "fullName": "Furaha Mukamana",
+          "username": "Furaha",
+          "viewedAt": "2026-07-13T11:54:21.766Z"
+        },
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "viewedAt": "2026-07-13T11:58:56.842Z"
+        },
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "viewedAt": "2026-07-13T14:11:58.925Z"
+        }
+      ],
+      "oks": [
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "okAt": "2026-07-13T12:17:32.000Z"
+        },
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "okAt": "2026-07-13T14:11:58.925Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "fullName": "Furaha Mukamana",
+      "username": "Furaha",
+      "text": "filtro",
+      "created_at": "2026-07-13T14:29:41.409Z",
+      "replyTo": null,
+      "views": [
+        {
+          "userId": 3,
+          "fullName": "Furaha Mukamana",
+          "username": "Furaha",
+          "viewedAt": "2026-07-13T14:29:41.486Z"
+        },
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "viewedAt": "2026-07-13T14:29:42.773Z"
+        },
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "viewedAt": "2026-07-13T18:42:13.555Z"
+        }
+      ],
+      "oks": [
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "okAt": "2026-07-13T14:30:38.090Z"
+        },
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "okAt": "2026-07-13T18:42:13.555Z"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "fullName": "Assanito Joao Braimo",
+      "username": "Sanito",
+      "text": "ok",
+      "created_at": "2026-07-13T14:30:00.742Z",
+      "replyTo": null,
+      "views": [
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "viewedAt": "2026-07-13T14:30:00.820Z"
+        },
+        {
+          "userId": 3,
+          "fullName": "Furaha Mukamana",
+          "username": "Furaha",
+          "viewedAt": "2026-07-13T14:30:01.931Z"
+        },
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "viewedAt": "2026-07-13T18:42:15.010Z"
+        }
+      ],
+      "oks": [
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "okAt": "2026-07-13T18:42:15.010Z"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "fullName": "Shakil Assanito",
+      "username": "chinha",
+      "text": "Ola",
+      "created_at": "2026-07-13T18:42:56.953Z",
+      "replyTo": null,
+      "views": [
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "viewedAt": "2026-07-13T18:42:57.039Z"
+        },
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "viewedAt": "2026-07-13T18:43:39.372Z"
+        },
+        {
+          "userId": 3,
+          "fullName": "Furaha Mukamana",
+          "username": "Furaha",
+          "viewedAt": "2026-07-14T07:21:04.561Z"
+        }
+      ],
+      "oks": [
+        {
+          "userId": 3,
+          "fullName": "Furaha Mukamana",
+          "username": "Furaha",
+          "okAt": "2026-07-14T07:21:04.561Z"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "fullName": "Assanito Joao Braimo",
+      "username": "Sanito",
+      "text": "ola",
+      "created_at": "2026-07-13T18:43:48.017Z",
+      "replyTo": {
+        "id": 5,
+        "userId": 2,
+        "fullName": "Shakil Assanito",
+        "username": "chinha",
+        "text": "Ola"
+      },
+      "views": [
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "viewedAt": "2026-07-13T18:43:50.308Z"
+        },
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "viewedAt": "2026-07-13T18:43:58.248Z"
+        },
+        {
+          "userId": 3,
+          "fullName": "Furaha Mukamana",
+          "username": "Furaha",
+          "viewedAt": "2026-07-14T07:21:06.859Z"
+        }
+      ],
+      "oks": [
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "okAt": "2026-07-13T18:43:58.248Z"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "userId": 2,
+      "fullName": "Shakil Assanito",
+      "username": "chinha",
+      "text": "oleo",
+      "created_at": "2026-07-18T07:15:10.128Z",
+      "replyTo": null,
+      "views": [
+        {
+          "userId": 2,
+          "fullName": "Shakil Assanito",
+          "username": "chinha",
+          "viewedAt": "2026-07-18T07:15:10.199Z"
+        },
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "viewedAt": "2026-07-18T07:15:28.570Z"
+        }
+      ],
+      "oks": [
+        {
+          "userId": 1,
+          "fullName": "Assanito Joao Braimo",
+          "username": "Sanito",
+          "okAt": "2026-07-18T07:15:28.615Z"
+        }
+      ]
+    }
+  ]
+}

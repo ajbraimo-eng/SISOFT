@@ -1,0 +1,71 @@
+{
+  "days": {
+    "2026-07-11": {
+      "date": "2026-07-11",
+      "initialValue": 200,
+      "movements": [
+        {
+          "id": 2,
+          "type": "entrada",
+          "amount": 500,
+          "description": "venda de oleo queimado",
+          "userId": 2,
+          "userName": "Shakil Assanito",
+          "created_at": "2026-07-11T18:43:59.936Z"
+        },
+        {
+          "id": 1,
+          "type": "saida",
+          "amount": 100,
+          "description": "Credito",
+          "userId": 1,
+          "userName": "Assanito Joao Braimo",
+          "created_at": "2026-07-11T18:42:59.429Z"
+        }
+      ],
+      "updated_at": "2026-07-11T18:43:59.936Z"
+    },
+    "2026-07-13": {
+      "date": "2026-07-13",
+      "initialValue": 1000,
+      "movements": [
+        {
+          "id": 5,
+          "type": "saida",
+          "amount": 100,
+          "description": "Credito",
+          "userId": 1,
+          "userName": "Assanito Joao Braimo",
+          "created_at": "2026-07-13T06:42:20.953Z"
+        }
+      ],
+      "updated_at": "2026-07-13T18:00:55.919Z"
+    },
+    "2026-07-15": {
+      "date": "2026-07-15",
+      "initialValue": 200,
+      "movements": [
+        {
+          "id": 8,
+          "type": "saida",
+          "amount": 100,
+          "description": "Taxi",
+          "userId": 3,
+          "userName": "Furaha Mukamana",
+          "created_at": "2026-07-15T09:26:04.913Z"
+        },
+        {
+          "id": 6,
+          "type": "entrada",
+          "amount": 500,
+          "description": "venda",
+          "userId": 1,
+          "userName": "Assanito Joao Braimo",
+          "created_at": "2026-07-15T08:42:35.275Z"
+        }
+      ],
+      "updated_at": "2026-07-15T09:26:48.308Z"
+    }
+  },
+  "nextMovementId": 9
+}

@@ -1,0 +1,438 @@
+{
+  "entries": [
+    {
+      "id": 31,
+      "type": "factura",
+      "action": "atualizacao",
+      "summary": "Factura FT-2026-0001 atualizada: INSS",
+      "meta": {
+        "facturaId": 1,
+        "total": 23200,
+        "status": "pago"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-18T06:24:31.136Z"
+    },
+    {
+      "id": 30,
+      "type": "factura",
+      "action": "atualizacao",
+      "summary": "Factura FT-2026-0001 atualizada: INSS",
+      "meta": {
+        "facturaId": 1,
+        "total": 23200,
+        "status": "pago"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-18T06:24:14.827Z"
+    },
+    {
+      "id": 29,
+      "type": "factura",
+      "action": "criacao",
+      "summary": "Factura FT-2026-0001: INSS — 23200.00 MT",
+      "meta": {
+        "facturaId": 1,
+        "total": 23200
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-18T06:23:05.870Z"
+    },
+    {
+      "id": 28,
+      "type": "armazem",
+      "action": "entrada",
+      "summary": "Entrada de stock: casquilhos (qtd 6) — fornecedor sisoft",
+      "meta": {
+        "itemId": 3,
+        "barcode": "",
+        "quantity": 6,
+        "supplierId": 1,
+        "supplierName": "sisoft"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-17T03:14:34.946Z"
+    },
+    {
+      "id": 27,
+      "type": "fornecedor",
+      "action": "criacao",
+      "summary": "Fornecedor registado: sisoft (849835381)",
+      "meta": {
+        "fornecedorId": 1
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-17T03:12:48.029Z"
+    },
+    {
+      "id": 26,
+      "type": "diario",
+      "action": "exclusao",
+      "summary": "Movimento removido do diário (2026-07-15)",
+      "meta": {
+        "date": "2026-07-15",
+        "movementId": 7
+      },
+      "userId": 3,
+      "userName": "Furaha Mukamana",
+      "created_at": "2026-07-15T09:26:48.632Z"
+    },
+    {
+      "id": 25,
+      "type": "diario",
+      "action": "saida",
+      "summary": "Saída no diário: 100.00 MT — Taxi",
+      "meta": {
+        "date": "2026-07-15",
+        "movementId": 8,
+        "amount": 100
+      },
+      "userId": 3,
+      "userName": "Furaha Mukamana",
+      "created_at": "2026-07-15T09:26:05.897Z"
+    },
+    {
+      "id": 24,
+      "type": "diario",
+      "action": "saida",
+      "summary": "Saída no diário: 100.00 MT — Taxi",
+      "meta": {
+        "date": "2026-07-15",
+        "movementId": 7,
+        "amount": 100
+      },
+      "userId": 3,
+      "userName": "Furaha Mukamana",
+      "created_at": "2026-07-15T09:26:00.894Z"
+    },
+    {
+      "id": 23,
+      "type": "diario",
+      "action": "entrada",
+      "summary": "Entrada no diário: 500.00 MT — venda",
+      "meta": {
+        "date": "2026-07-15",
+        "movementId": 6,
+        "amount": 500
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-15T08:42:35.279Z"
+    },
+    {
+      "id": 22,
+      "type": "diario",
+      "action": "atualizacao",
+      "summary": "Valor inicial do diário (2026-07-15): 200.00 MT",
+      "meta": {
+        "date": "2026-07-15",
+        "initialValue": 200,
+        "userId": 1
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-15T08:42:18.992Z"
+    },
+    {
+      "id": 21,
+      "type": "diario",
+      "action": "exclusao",
+      "summary": "Movimento removido do diário (2026-07-13)",
+      "meta": {
+        "date": "2026-07-13",
+        "movementId": 4
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T18:00:57.306Z"
+    },
+    {
+      "id": 20,
+      "type": "diario",
+      "action": "exclusao",
+      "summary": "Movimento removido do diário (2026-07-13)",
+      "meta": {
+        "date": "2026-07-13",
+        "movementId": 3
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T18:00:52.415Z"
+    },
+    {
+      "id": 19,
+      "type": "obras",
+      "action": "atualizacao",
+      "summary": "Obra atualizada: Visao Mindial · AHZ 065 MP",
+      "meta": {
+        "obraId": 1,
+        "plate": "AHZ 065 MP"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T14:35:00.088Z"
+    },
+    {
+      "id": 18,
+      "type": "obras",
+      "action": "atualizacao",
+      "summary": "Obra atualizada: Visao Mindial · AHZ 065 MP",
+      "meta": {
+        "obraId": 1,
+        "plate": "AHZ 065 MP"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T14:34:40.442Z"
+    },
+    {
+      "id": 17,
+      "type": "requisicao",
+      "action": "requisicao",
+      "summary": "Requisição: PONTEIRAS (qtd 2) · obra #000001 · saída do armazém",
+      "meta": {
+        "obraId": 1,
+        "itemId": 1,
+        "quantity": 2,
+        "itemName": "PONTEIRAS"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T14:24:45.177Z"
+    },
+    {
+      "id": 16,
+      "type": "requisicao",
+      "action": "requisicao",
+      "summary": "Requisição: ROTULA DE CIMA D4D (qtd 2) · obra #000001 · saída do armazém",
+      "meta": {
+        "obraId": 1,
+        "itemId": 2,
+        "quantity": 2,
+        "itemName": "ROTULA DE CIMA D4D"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T14:24:10.355Z"
+    },
+    {
+      "id": 15,
+      "type": "requisicao",
+      "action": "requisicao_removida",
+      "summary": "Requisição removida: ROTULA DE CIMA D4D · obra #000001 · devolução ao armazém (qtd 2)",
+      "meta": {
+        "obraId": 1,
+        "requisicaoId": 1,
+        "quantity": 0,
+        "itemName": "ROTULA DE CIMA D4D",
+        "returned": 2
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T14:23:21.345Z"
+    },
+    {
+      "id": 14,
+      "type": "requisicao",
+      "action": "requisicao_removida",
+      "summary": "Requisição removida: PONTEIRAS · obra #000001 · devolução ao armazém (qtd 3)",
+      "meta": {
+        "obraId": 1,
+        "requisicaoId": 2,
+        "quantity": 0,
+        "itemName": "PONTEIRAS",
+        "returned": 3
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T14:23:16.722Z"
+    },
+    {
+      "id": 13,
+      "type": "requisicao",
+      "action": "requisicao",
+      "summary": "Requisição: PONTEIRAS (qtd 2) · obra #000001 · saída do armazém",
+      "meta": {
+        "obraId": 1,
+        "itemId": 1,
+        "quantity": 2,
+        "itemName": "PONTEIRAS"
+      },
+      "userId": 3,
+      "userName": "Furaha Mukamana",
+      "created_at": "2026-07-13T06:52:58.025Z"
+    },
+    {
+      "id": 12,
+      "type": "diario",
+      "action": "saida",
+      "summary": "Saída no diário: 100.00 MT — Credito",
+      "meta": {
+        "date": "2026-07-13",
+        "movementId": 5,
+        "amount": 100
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-13T06:42:20.955Z"
+    },
+    {
+      "id": 11,
+      "type": "diario",
+      "action": "saida",
+      "summary": "Saída no diário: 400.00 MT — casquilhos",
+      "meta": {
+        "date": "2026-07-13",
+        "movementId": 4,
+        "amount": 400
+      },
+      "userId": 3,
+      "userName": "Furaha Mukamana",
+      "created_at": "2026-07-13T06:36:56.450Z"
+    },
+    {
+      "id": 10,
+      "type": "diario",
+      "action": "entrada",
+      "summary": "Entrada no diário: 500.00 MT — venda de oleo queimado",
+      "meta": {
+        "date": "2026-07-13",
+        "movementId": 3,
+        "amount": 500
+      },
+      "userId": 3,
+      "userName": "Furaha Mukamana",
+      "created_at": "2026-07-13T06:36:30.011Z"
+    },
+    {
+      "id": 9,
+      "type": "diario",
+      "action": "atualizacao",
+      "summary": "Valor inicial do diário (2026-07-13): 1000.00 MT",
+      "meta": {
+        "date": "2026-07-13",
+        "initialValue": 1000,
+        "userId": 3
+      },
+      "userId": 3,
+      "userName": "Furaha Mukamana",
+      "created_at": "2026-07-13T06:35:37.996Z"
+    },
+    {
+      "id": 8,
+      "type": "cotacao",
+      "action": "atualizacao",
+      "summary": "Cotação COT-000001 atualizada: INSS",
+      "meta": {
+        "cotacaoId": 1,
+        "total": 30160,
+        "status": "rascunho"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-12T09:13:12.012Z"
+    },
+    {
+      "id": 7,
+      "type": "cotacao",
+      "action": "criacao",
+      "summary": "Cotação COT-000001: INSS — 30160.00 MT",
+      "meta": {
+        "cotacaoId": 1,
+        "total": 30160
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-12T09:08:30.703Z"
+    },
+    {
+      "id": 6,
+      "type": "cliente",
+      "action": "criacao",
+      "summary": "Cliente registado: INSS (840000000)",
+      "meta": {
+        "clienteId": 1
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-12T08:59:57.866Z"
+    },
+    {
+      "id": 5,
+      "type": "diario",
+      "action": "entrada",
+      "summary": "Entrada no diário: 500.00 MT — venda de oleo queimado",
+      "meta": {
+        "date": "2026-07-11",
+        "movementId": 2,
+        "amount": 500
+      },
+      "userId": 2,
+      "userName": "Shakil Assanito",
+      "created_at": "2026-07-11T18:43:59.951Z"
+    },
+    {
+      "id": 4,
+      "type": "diario",
+      "action": "saida",
+      "summary": "Saída no diário: 100.00 MT — Credito",
+      "meta": {
+        "date": "2026-07-11",
+        "movementId": 1,
+        "amount": 100
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-11T18:42:59.456Z"
+    },
+    {
+      "id": 3,
+      "type": "diario",
+      "action": "atualizacao",
+      "summary": "Valor inicial do diário (2026-07-11): 200.00 MT",
+      "meta": {
+        "date": "2026-07-11",
+        "initialValue": 200,
+        "userId": 1
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-11T18:42:05.293Z"
+    },
+    {
+      "id": 2,
+      "type": "requisicao",
+      "action": "requisicao",
+      "summary": "Requisição: PONTEIRAS (qtd 1) · obra #000001 · saída do armazém",
+      "meta": {
+        "obraId": 1,
+        "itemId": 1,
+        "quantity": 1,
+        "itemName": "PONTEIRAS"
+      },
+      "userId": 2,
+      "userName": "Shakil Assanito",
+      "created_at": "2026-07-11T14:53:13.233Z"
+    },
+    {
+      "id": 1,
+      "type": "requisicao",
+      "action": "requisicao",
+      "summary": "Requisição: ROTULA DE CIMA D4D (qtd 2) · obra #000001 · saída do armazém",
+      "meta": {
+        "obraId": 1,
+        "itemId": 2,
+        "quantity": 2,
+        "itemName": "ROTULA DE CIMA D4D"
+      },
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-11T14:51:13.408Z"
+    }
+  ]
+}

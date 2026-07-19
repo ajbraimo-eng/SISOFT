@@ -1,0 +1,17 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "name": "INSS",
+      "phone": "840000000",
+      "email": "inss@gmail.com",
+      "document": "1234567",
+      "address": "nampula",
+      "notes": "",
+      "userId": 1,
+      "userName": "Assanito Joao Braimo",
+      "created_at": "2026-07-12T08:59:57.853Z",
+      "updated_at": "2026-07-12T08:59:57.853Z"
+    }
+  ]
+}

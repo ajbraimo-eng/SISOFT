@@ -170,9 +170,9 @@ textarea {
 }
 
 .nav-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -184,6 +184,7 @@ textarea {
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: -0.03em;
+  justify-self: start;
 }
 
 .brand img {
@@ -197,10 +198,12 @@ textarea {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  justify-content: center;
+  gap: 1.85rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-self: center;
 }
 
 .nav-links a {
@@ -216,6 +219,7 @@ textarea {
 
 .nav-cta {
   flex-shrink: 0;
+  justify-self: end;
 }
 
 .btn {
@@ -260,78 +264,78 @@ textarea {
   border: 1px solid var(--line);
 }
 
-/* Hero */
+/* Hero — segunda aparência (mockup navy/ciano) */
 .hero {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
   display: grid;
   align-items: center;
-  padding: 7.5rem 0 3.5rem;
+  padding: 7.25rem 0 3.25rem;
   overflow: hidden;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  gap: 1.25rem 2.25rem;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 1rem 1.5rem;
   align-items: center;
 }
 
 .hero-copy {
   position: relative;
   z-index: 2;
-  max-width: 38rem;
+  max-width: 34rem;
 }
 
 .brand-mark {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.7rem;
   font-family: var(--font-display);
-  font-size: clamp(3.4rem, 8.5vw, 5.2rem);
+  font-size: clamp(4rem, 10vw, 6rem);
   font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 0.92;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
   color: var(--foam);
-  text-shadow: 0 8px 40px rgba(62, 203, 255, 0.25);
+  text-shadow: 0 10px 48px rgba(62, 203, 255, 0.28);
   animation: rise 0.9s var(--ease) both;
 }
 
 .hero h1 {
   margin: 0 0 0.85rem;
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-size: clamp(1.15rem, 2.3vw, 1.45rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.3;
-  color: rgba(244, 248, 255, 0.92);
+  color: rgba(244, 248, 255, 0.9);
   animation: rise 0.9s var(--ease) 0.08s both;
 }
 
 .hero-lead {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.45rem;
   color: var(--muted);
-  font-size: 0.98rem;
-  max-width: 30rem;
+  font-size: 0.96rem;
+  max-width: 28rem;
   animation: rise 0.9s var(--ease) 0.16s both;
 }
 
 .hero-features {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.1rem;
-  margin: 0 0 1.75rem;
+  gap: 1rem;
+  margin: 0 0 1.85rem;
   animation: rise 0.9s var(--ease) 0.24s both;
 }
 
 .hero-feature-icon {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   margin-bottom: 0.65rem;
-  border-radius: 1rem;
+  border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(62, 203, 255, 0.28);
-  background: rgba(5, 13, 42, 0.85);
-  box-shadow: 0 0 18px rgba(62, 203, 255, 0.18);
+  border: 1px solid rgba(62, 203, 255, 0.32);
+  background: rgba(5, 13, 42, 0.9);
+  box-shadow: 0 0 22px rgba(62, 203, 255, 0.22);
 }
 
 .hero-feature-icon img {
@@ -339,7 +343,7 @@ textarea {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.08);
+  transform: scale(1.12);
 }
 
 .hero-feature h3 {
@@ -352,9 +356,9 @@ textarea {
 .hero-feature p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   line-height: 1.45;
-  max-width: 12rem;
+  max-width: 11.5rem;
 }
 
 .hero-cta {
@@ -366,31 +370,32 @@ textarea {
   z-index: 1;
   display: grid;
   place-items: center;
-  min-height: 560px;
+  min-height: 580px;
+  margin-right: -4vw;
   animation: float-in 1.2s var(--ease) both;
 }
 
 .hero-glow {
   position: absolute;
-  width: 88%;
-  height: 72%;
+  width: 92%;
+  height: 78%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(62, 203, 255, 0.5), transparent 68%);
-  filter: blur(14px);
+  background: radial-gradient(circle, rgba(62, 203, 255, 0.55), transparent 68%);
+  filter: blur(16px);
   animation: pulse-glow 5s ease-in-out infinite;
 }
 
 .hero-product {
   position: relative;
   z-index: 2;
-  width: min(108%, 620px);
+  width: min(112%, 680px);
   max-width: none;
   border: 0;
   border-radius: 1.25rem;
   background: transparent;
   box-shadow: none;
-  filter: drop-shadow(0 30px 55px rgba(4, 12, 40, 0.65))
-    drop-shadow(0 0 28px rgba(62, 203, 255, 0.22));
+  filter: drop-shadow(0 32px 60px rgba(4, 12, 40, 0.7))
+    drop-shadow(0 0 34px rgba(62, 203, 255, 0.28));
   animation: float-product 6s ease-in-out infinite;
 }
 
@@ -1006,16 +1011,24 @@ tr:last-child td {
 }
 
 @media (max-width: 860px) {
+  .nav-inner {
+    grid-template-columns: 1fr auto;
+  }
+
   .nav-links {
     display: none;
   }
 
-  .hero-features,
   .service-grid,
   .stats,
   .field-row,
-  .app-layout {
+  .app-layout,
+  .hero-features {
     grid-template-columns: 1fr;
+  }
+
+  .hero-feature p {
+    max-width: none;
   }
 
   .app-nav {

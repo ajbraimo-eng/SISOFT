@@ -1,5 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Sisoft">
-  <rect width="256" height="256" fill="#000"/>
-  <path fill="#8A8A8A" d="M148 36c42 10 72 48 72 92 0 44-28 80-68 94 8-28 4-52-14-74-16-20-20-40-12-64 6-18 14-32 22-48z"/>
-  <path fill="#8A8A8A" d="M108 220c-42-10-72-48-72-92 0-44 28-80 68-94-8 28-4 52 14 74 16 20 20 40 12 64-6 18-14 32-22 48z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Sisoft">
+  <circle cx="64" cy="64" r="64" fill="#04102c"/>
+  <circle cx="64" cy="64" r="58" fill="none" stroke="#7adcff" stroke-width="5"/>
+  <!-- Clear bold S -->
+  <path
+    fill="none"
+    stroke="#7adcff"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M86 40
+       C70 28 46 28 40 46
+       C36 60 52 66 68 72
+       C86 78 96 90 86 102
+       C76 114 48 116 36 100"
+  />
 </svg>

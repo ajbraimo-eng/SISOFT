@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Isoft</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="mark">Is</div>
+        <div>
+          <strong>Isoft</strong>
+          <span>Stock &amp; Oficina</span>
+        </div>
+      </div>
+
+      <nav class="nav-list" id="navList">
+        <button class="nav-item active" data-page="inventario"><span class="ico">▣</span> Inventário</button>
+        <button class="nav-item ceo-only" data-page="armazem"><span class="ico">▤</span> Armazém</button>
+        <button class="nav-item" data-page="obras"><span class="ico">⚙</span> Obras</button>
+        <button class="nav-item" data-page="cotacao"><span class="ico">◈</span> Cotações</button>
+        <button class="nav-item" data-page="factura"><span class="ico">▦</span> Facturas</button>
+        <button class="nav-item" data-page="diario"><span class="ico">◎</span> Diário</button>
+        <button class="nav-item" data-page="historico"><span class="ico">↺</span> Histórico</button>
+        <button class="nav-item" data-page="cameras"><span class="ico">◉</span> Câmaras</button>
+        <button class="nav-item" data-page="chat"><span class="ico">✉</span> Chat</button>
+        <button class="nav-item ceo-only" data-page="cadastro"><span class="ico">☺</span> Cadastro</button>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="user-chip">
+          <div class="avatar" id="userAvatar">I</div>
+          <div class="meta">
+            <strong id="userName">—</strong>
+            <span id="userRole">—</span>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn">Terminar sessão</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+          <div>
+            <h1 id="pageTitle">Inventário</h1>
+            <p class="sub" id="pageSub">Resumo do stock e valores</p>
+          </div>
+        </div>
+        <div class="topbar-actions" id="topbarActions"></div>
+      </header>
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <div id="modalRoot"></div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

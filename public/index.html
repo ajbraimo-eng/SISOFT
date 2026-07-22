@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BODRIN — Кофейня</title>
+  <meta name="description" content="Открой для себя превосходный вкус в каждом глотке. Кофейня BODRIN." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/bodrin.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="logo" href="#top" aria-label="BODRIN">
+      BODR<span class="logo-bean"></span>N
+    </a>
+
+    <nav class="nav-pill" id="navPill" aria-label="Основная навигация">
+      <a href="#top" class="is-active">Главная</a>
+      <a href="#menu">Меню</a>
+      <a href="#about">О нас</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#promo">Акции</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" aria-label="Профиль">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="8" r="3.5" />
+          <path d="M5 20c1.8-3.4 4.2-5 7-5s5.2 1.6 7 5" />
+        </svg>
+      </button>
+      <button class="icon-btn cart-btn" type="button" id="cartBtn" aria-label="Корзина">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 5h2l2.2 10.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.5L21 8H7" />
+          <circle cx="10" cy="20" r="1.4" />
+          <circle cx="17" cy="20" r="1.4" />
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <a class="btn btn-teal" href="#menu">Сделать заказ</a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Меню">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Открой для себя<br />превосходный вкус<br />в каждом глотке!</h1>
+        <p>
+          В BODRIN кофе — это искусство. Мы бережно обжариваем зерно,
+          готовим напитки с душой и создаём атмосферу, в которую хочется возвращаться.
+        </p>
+        <a class="btn btn-teal btn-lg" href="#menu">Выбрать кофе</a>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="bean bean-1"></div>
+        <div class="bean bean-2"></div>
+        <div class="bean bean-3"></div>
+        <div class="bean bean-4"></div>
+        <figure class="hero-cups-shot">
+          <img src="/assets/bodrin-hero-cups.png" alt="" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- TOP PRODUCTS -->
+    <section class="top-section" id="menu">
+      <div class="top-watermark" aria-hidden="true">TOP</div>
+      <div class="section-head">
+        <p class="eyebrow">Популярное</p>
+        <h2>Любимые напитки гостей</h2>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card" data-name="Cappuccino" data-price="120">
+          <div class="product-media">
+            <span class="rating">4.9 ★</span>
+            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=700&q=80" alt="Cappuccino" />
+          </div>
+          <div class="product-body">
+            <h3>Cappuccino</h3>
+            <p>40% espresso · 60% milk foam</p>
+            <div class="product-row">
+              <strong>120 ₽</strong>
+              <button class="add-btn" type="button" aria-label="Добавить Cappuccino">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Latte" data-price="130">
+          <div class="product-media">
+            <span class="rating">4.8 ★</span>
+            <img src="https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=700&q=80" alt="Latte" />
+          </div>
+          <div class="product-body">
+            <h3>Latte</h3>
+            <p>30% espresso · 70% steamed milk</p>
+            <div class="product-row">
+              <strong>130 ₽</strong>
+              <button class="add-btn" type="button" aria-label="Добавить Latte">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Mocha" data-price="150">
+          <div class="product-media">
+            <span class="rating">4.9 ★</span>
+            <img src="https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b?auto=format&fit=crop&w=700&q=80" alt="Mocha" />
+          </div>
+          <div class="product-body">
+            <h3>Mocha</h3>
+            <p>espresso · chocolate · milk</p>
+            <div class="product-row">
+              <strong>150 ₽</strong>
+              <button class="add-btn" type="button" aria-label="Добавить Mocha">+</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-link">
+        <a href="#full-menu">Перейти в меню →</a>
+      </div>
+    </section>
+
+    <!-- ABOUT / FEATURES -->
+    <section class="about-section" id="about">
+      <div class="about-grid">
+        <div class="feature feature-1">
+          <span class="feature-num">1</span>
+          <h3>Высокое качество зёрен</h3>
+          <p>Отбираем арабику с проверенных плантаций и обжариваем небольшими партиями.</p>
+        </div>
+        <div class="feature feature-2">
+          <span class="feature-num">2</span>
+          <h3>Атмосфера вдохновения</h3>
+          <p>Тёплый свет, мягкая музыка и пространство, где хочется думать и творить.</p>
+        </div>
+
+        <div class="about-center">
+          <div class="about-cup">
+            <img src="/assets/bodrin-about-cup.png" alt="Кофе BODRIN" />
+          </div>
+          <p class="about-brand">BODRIN — это...</p>
+          <a class="btn btn-teal" href="#menu">Заказать</a>
+        </div>
+
+        <div class="feature feature-3">
+          <span class="feature-num">3</span>
+          <h3>Индивидуальный подход</h3>
+          <p>Помогаем подобрать напиток под настроение, крепость и любимые вкусы.</p>
+        </div>
+        <div class="feature feature-4">
+          <span class="feature-num">4</span>
+          <h3>Команда профессионалов</h3>
+          <p>Бариста BODRIN знают зерно, температуру и ритм идеальной чашки.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews-section" id="reviews">
+      <div class="section-head light">
+        <p class="eyebrow">Отзывы</p>
+        <h2>Говорят наши гости</h2>
+      </div>
+      <div class="reviews-row">
+        <blockquote class="review-card">
+          <p>«Лучший капучино в городе. Атмосфера как в любимой европейской кофейне.»</p>
+          <footer>— Анна К.</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <p>«Прихожу сюда работать и отдыхать. Кофе всегда идеальный, персонал внимательный.»</p>
+          <footer>— Дмитрий Л.</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <p>«Мокко BODRIN — мой ритуал по утрам. Вкус глубокий, подача красивая.»</p>
+          <footer>— Мария С.</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- QUIZ / PROMO -->
+    <section class="quiz-section" id="promo">
+      <div class="quiz-panel">
+        <div class="quiz-copy">
+          <h2>Узнай какой кофе<br />подходит тебе больше всего</h2>
+          <p>Короткий тест — и мы подскажем напиток под твоё настроение.</p>
+          <button class="btn btn-cream" type="button" id="quizBtn">Пройти тест</button>
+        </div>
+        <div class="quiz-visual" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=80" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL MENU STRIP -->
+    <section class="menu-strip" id="full-menu">
+      <div class="section-head">
+        <p class="eyebrow">Меню</p>
+        <h2>Ещё немного вкуса</h2>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><span>Espresso</span><span>90 ₽</span></div>
+        <div class="menu-item"><span>Americano</span><span>100 ₽</span></div>
+        <div class="menu-item"><span>Flat White</span><span>140 ₽</span></div>
+        <div class="menu-item"><span>Raf</span><span>160 ₽</span></div>
+        <div class="menu-item"><span>Cold Brew</span><span>170 ₽</span></div>
+        <div class="menu-item"><span>Matcha Latte</span><span>180 ₽</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo footer-logo" href="#top">BODR<span class="logo-bean"></span>N</a>
+    <div class="footer-links">
+      <a href="#promo">Новости кофейни</a>
+      <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> BODRIN Coffee</p>
+  </footer>
+
+  <!-- Cart drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Корзина</h3>
+      <button type="button" class="icon-btn" id="closeCart" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <p class="cart-empty">Пока пусто. Выберите кофе :)</p>
+    </div>
+    <div class="cart-foot">
+      <div class="cart-total"><span>Итого</span><strong id="cartTotal">0 ₽</strong></div>
+      <button class="btn btn-teal btn-block" type="button" id="checkoutBtn">Оформить заказ</button>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- Quiz modal -->
+  <div class="modal" id="quizModal" hidden>
+    <div class="modal-card">
+      <button class="icon-btn modal-close" type="button" id="closeQuiz" aria-label="Закрыть">✕</button>
+      <h3>Какой ты кофе?</h3>
+      <p class="modal-lede" id="quizStepText">Что тебе ближе утром?</p>
+      <div class="quiz-options" id="quizOptions"></div>
+      <p class="quiz-result hidden" id="quizResult"></p>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toasts"></div>
+
+  <script src="/js/bodrin.js"></script>
+</body>
+</html>

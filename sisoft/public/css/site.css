@@ -364,90 +364,39 @@ textarea {
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.1rem;
+  gap: 1rem;
 }
 
 .service-card {
   display: grid;
-  grid-template-rows: auto 1fr auto;
   gap: 0.85rem;
   padding: 1rem;
-  border-radius: 1.5rem;
+  border-radius: 1.35rem;
   min-height: 100%;
-  transition: transform 0.3s var(--ease), background 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  background: var(--glass-strong);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.service-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.service-chip {
-  display: inline-grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid var(--glass-border);
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--cyan);
-}
-
-.service-tag {
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.service-media {
-  border-radius: 1.15rem;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(3, 21, 40, 0.35);
-  aspect-ratio: 1.05 / 1;
-}
-
-.service-media img {
+.service-card img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
+  border-radius: 1rem;
 }
 
-.service-card-body {
-  display: grid;
-  gap: 0.55rem;
-  align-content: start;
-}
-
-.service-card-body h3 {
+.service-card h3 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.12rem;
+  font-size: 1.05rem;
   letter-spacing: -0.02em;
 }
 
-.service-card-body p {
+.service-card p {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
-  min-height: 2.7em;
 }
 
-.service-card-body .btn {
+.service-card .btn {
   justify-self: start;
-  margin-top: 0.25rem;
   min-height: 2.35rem;
   padding: 0.45rem 1rem;
   font-size: 0.85rem;

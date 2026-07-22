@@ -32,7 +32,7 @@ function readEnv(name, fallback = '') {
   return value == null || value === '' ? fallback : String(value);
 }
 
-const PORT = Number(readEnv('PORT', '3000')) || 3000;
+const PORT = Number(readEnv('PORT', '3050')) || 3050;
 const HOST = readEnv('HOST', '0.0.0.0');
 const PUBLIC_URL = readEnv('PUBLIC_URL', '').replace(/\/$/, '');
 

@@ -116,7 +116,9 @@ input {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.25);
+  object-fit: cover;
+  background: #000;
+  box-shadow: 0 0 0 2px rgba(138, 138, 138, 0.35);
 }
 
 .nav-links {

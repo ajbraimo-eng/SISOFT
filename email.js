@@ -125,7 +125,7 @@ async function sendViaSmtp(to, subject, text) {
   try {
     socket = await connect();
     await expectSmtp(socket, [220]);
-    await writeSmtp(socket, `EHLO isoft.local`);
+    await writeSmtp(socket, `EHLO sisoft.local`);
     await expectSmtp(socket, [250]);
 
     if (!secure) {
@@ -136,7 +136,7 @@ async function sendViaSmtp(to, subject, text) {
         tlsSocket.setEncoding('utf8');
         tlsSocket.on('error', reject);
       });
-      await writeSmtp(socket, `EHLO isoft.local`);
+      await writeSmtp(socket, `EHLO sisoft.local`);
       await expectSmtp(socket, [250]);
     }
 
@@ -155,7 +155,7 @@ async function sendViaSmtp(to, subject, text) {
     await expectSmtp(socket, [354]);
 
     const payload = [
-      `From: Isoft <${from}>`,
+      `From: Sisoft <${from}>`,
       `To: <${to}>`,
       `Subject: ${subject}`,
       'MIME-Version: 1.0',

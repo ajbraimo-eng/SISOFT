@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Painel Sisoft — controlo próprio" />
+    <title>Entrar — Painel Sisoft</title>
+    <meta name="application-name" content="Sisoft" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true"></div>
+    <main class="login-page">
+      <div class="login-shell glass">
+        <a class="brand" href="/" aria-label="Sisoft">
+          <img src="/assets/logo.png" alt="Sisoft" width="44" height="44" />
+          <span>Sisoft</span>
+        </a>
+        <h1>Painel Sisoft</h1>
+        <p>Controlo próprio da Sisoft — sem ligação ao Isoft.</p>
+        <form class="login-form" id="login-form" autocomplete="on">
+          <div class="field">
+            <label for="username">Utilizador ou email</label>
+            <input id="username" name="username" type="text" autocomplete="username" required autofocus />
+          </div>
+          <div class="field">
+            <label for="password">Senha</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <p class="form-msg" id="form-msg" role="alert" aria-live="polite"></p>
+          <button class="btn btn-cyan" type="submit" id="submit-btn">Entrar no painel</button>
+        </form>
+        <p class="login-foot"><a href="/">← Voltar ao site</a></p>
+      </div>
+    </main>
+    <script src="/js/login.js"></script>
+  </body>
+</html>

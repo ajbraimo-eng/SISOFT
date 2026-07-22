@@ -107,11 +107,15 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.redirect('/login.html');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/login.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.get('/app.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'app.html'));
 });
 
 function isCeo(userId) {
@@ -1001,7 +1005,7 @@ app.post('/api/recover', recoverRateLimit, async (req, res) => {
     });
 
     const emailText = [
-      'Isoft — recuperação de senha',
+      'Sisoft — recuperação de senha',
       '',
       `Olá${user.fullName ? ` ${user.fullName}` : ''},`,
       '',
@@ -1012,14 +1016,14 @@ app.post('/api/recover', recoverRateLimit, async (req, res) => {
       '',
       'Se não pediu esta recuperação, ignore este email.',
       '',
-      '— Equipa Isoft / Sisoft'
+      '— Equipa Sisoft'
     ].join('\n');
 
     let sendResult;
     try {
       sendResult = await mail.sendEmail(
         normalized,
-        'Isoft — código de recuperação de senha',
+        'Sisoft — código de recuperação de senha',
         emailText
       );
     } catch (error) {
@@ -1080,7 +1084,7 @@ app.post('/api/recover', recoverRateLimit, async (req, res) => {
       attempts: 0
     });
 
-    const smsText = `Isoft: o seu código de recuperação é ${code}. Válido por 10 minutos.`;
+    const smsText = `Sisoft: o seu código de recuperação é ${code}. Válido por 10 minutos.`;
     let sendResult;
     try {
       sendResult = await sms.sendSms(normalized, smsText);
@@ -1123,7 +1127,7 @@ app.post('/api/recover', recoverRateLimit, async (req, res) => {
     return res.json({
       title: 'Pedido registado',
       message: message
-        ? 'O administrador Isoft vai analisar o seu pedido e contactá-lo em breve.'
+        ? 'O administrador Sisoft vai analisar o seu pedido e contactá-lo em breve.'
         : `Pedido de redefinição para “${username}” enviado ao administrador.`
     });
   }
@@ -2140,24 +2144,26 @@ function startServer(options = {}) {
   const openBrowser =
     options.openBrowser !== undefined
       ? Boolean(options.openBrowser)
-      : String(process.env.OPEN_BROWSER || '1') !== '0';
-  return new Promise((resolve, reject) => {
-    const server = app.listen(PORT, HOST, () => {
-      const urls = config.getAccessUrls();
-      console.log(`Servidor Isoft a escutar em ${HOST}:${PORT}`);
-      urls.forEach((url) => console.log(`  → ${url}`));
-      if (config.PUBLIC_URL) {
-        console.log(`URL pública configurada: ${config.PUBLIC_URL}`);
-      }
-      reports.startMonthlyReportScheduler();
-      if (openBrowser) {
-        const target = `http://localhost:${PORT}/login.html`;
-        const prefs = desktop.readSettings();
-        console.log(
-          `A abrir navegador${prefs.openFullscreen ? ' (ecrã inteiro)' : ''}: ${target}`
-        );
-        desktop.openInBrowser(target, { fullscreen: prefs.openFullscreen });
-      }
+      : String(process.env.OPEN_BROWSER || '0') !== '0';
+    return new Promise((resolve, reject) => {
+      const server = app.listen(PORT, HOST, () => {
+        const urls = config.getAccessUrls();
+        console.log(`Servidor Sisoft a escutar em ${HOST}:${PORT}`);
+        urls.forEach((url) => console.log(`  → ${url}`));
+        if (config.PUBLIC_URL) {
+          console.log(`URL pública configurada: ${config.PUBLIC_URL}`);
+        }
+        reports.startMonthlyReportScheduler();
+        if (openBrowser) {
+          const target = `http://localhost:${PORT}/`;
+          const prefs = desktop.readSettings();
+          console.log(
+            `A abrir navegador${prefs.openFullscreen ? ' (ecrã inteiro)' : ''}: ${target}`
+          );
+          desktop.openInBrowser(target, { fullscreen: prefs.openFullscreen });
+        } else {
+          console.log('Site Sisoft pronto. Abra http://localhost:' + PORT + '/');
+        }
       resolve(server);
     });
     server.on('error', reject);

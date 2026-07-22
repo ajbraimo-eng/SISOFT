@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Arranque do Isoft com abertura automática do browser.
+ * Arranque do Sisoft (site + painel próprios — sem Isoft).
  */
-const { startServer } = require('./server');
+const { start } = require('./sisoft/server');
 
-startServer({ openBrowser: true }).catch((error) => {
-  console.error('Falha ao iniciar o Isoft:', error.message || error);
+start().catch((error) => {
+  console.error('Falha ao iniciar o Sisoft:', error.message || error);
   process.exit(1);
 });

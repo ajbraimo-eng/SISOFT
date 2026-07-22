@@ -129,7 +129,7 @@ function generateMonthlyPdf(year, month, options = {}) {
     const stream = fs.createWriteStream(filePath);
     doc.pipe(stream);
 
-    doc.fontSize(18).fillColor('#0f2744').text('Isoft — Relatório Mensal', { align: 'left' });
+    doc.fontSize(18).fillColor('#0f2744').text('Sisoft — Relatório Mensal', { align: 'left' });
     doc.moveDown(0.3);
     doc.fontSize(12).fillColor('#334155').text(`${data.monthName} de ${y}`);
     doc.fontSize(9).fillColor('#64748b').text(
@@ -286,7 +286,7 @@ function generateStockEntryPdf(item, options = {}) {
     const stream = fs.createWriteStream(filePath);
     doc.pipe(stream);
 
-    doc.fontSize(18).fillColor('#0f2744').text('Isoft — Relatório de Entrada de Material');
+    doc.fontSize(18).fillColor('#0f2744').text('Sisoft — Relatório de Entrada de Material');
     doc.moveDown(0.35);
     doc.fontSize(10).fillColor('#64748b').text(
       `Gerado em ${new Date().toLocaleString('pt-PT')}`
@@ -570,7 +570,7 @@ function generateStockPeriodExtractPdf(extract, options = {}) {
       custom: 'Intervalo'
     }[extract.period] || 'Período';
 
-    doc.fontSize(18).fillColor('#0f2744').text('Isoft — Extrato de Entradas de Material');
+    doc.fontSize(18).fillColor('#0f2744').text('Sisoft — Extrato de Entradas de Material');
     doc.moveDown(0.3);
     doc.fontSize(12).fillColor('#334155').text(`${periodTitle}: ${extract.label}`);
     if (extract.supplierName) {
@@ -757,7 +757,7 @@ function generateDiarioDayPdf(day, options = {}) {
     const stream = fs.createWriteStream(filePath);
     doc.pipe(stream);
 
-    doc.fontSize(18).fillColor('#0f2744').text('Isoft — Relatório do Diário');
+    doc.fontSize(18).fillColor('#0f2744').text('Sisoft — Relatório do Diário');
     doc.moveDown(0.3);
     doc.fontSize(12).fillColor('#334155').text(formatDiarioDateLabel(day.date));
     doc.fontSize(9).fillColor('#64748b').text(

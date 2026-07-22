@@ -1,14 +1,15 @@
 {
-  "name": "stock-system",
+  "name": "sisoft",
   "version": "1.0.0",
-  "description": "Sistema simples de stock com API e frontend.",
-  "main": "server.js",
+  "description": "Sisoft — informática: reparação, sites, apps, design e redes.",
+  "main": "sisoft/server.js",
   "scripts": {
-    "start": "node server.js",
-    "start:lan": "node server.js",
+    "start": "node sisoft/server.js",
+    "start:sisoft": "node sisoft/server.js",
+    "start:isoft": "node server.js",
     "start:app": "node launcher.js",
-    "build:installer": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-installer.ps1",
-    "build:android": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-android.ps1"
+    "start:3000": "PORT=3000 node sisoft/server.js",
+    "start:3050": "PORT=3050 node sisoft/server.js"
   },
   "dependencies": {
     "@simplewebauthn/browser": "^13.3.0",

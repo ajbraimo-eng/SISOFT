@@ -60,10 +60,10 @@ async function createRegistrationOptions(req, user) {
   const userID = new Uint8Array(Buffer.from(String(user.id), 'utf8'));
 
   const options = await generateRegistrationOptions({
-    rpName: 'Isoft',
+    rpName: 'Sisoft',
     rpID,
     userName: user.username || user.email || `user-${user.id}`,
-    userDisplayName: user.fullName || user.username || 'Utilizador Isoft',
+    userDisplayName: user.fullName || user.username || 'Utilizador Sisoft',
     userID,
     attestationType: 'none',
     excludeCredentials: toCredentialDescriptors(existing),

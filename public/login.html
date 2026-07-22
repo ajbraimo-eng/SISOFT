@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Entrar no Sisoft — área reservada." />
+    <title>Entrar — Sisoft</title>
+    <meta name="application-name" content="Sisoft" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true"></div>
+    <main class="login-page">
+      <div class="login-shell">
+        <a class="brand" href="/" aria-label="Sisoft">
+          <img src="/assets/logo.svg" alt="Sisoft" width="36" height="36" />
+          <span>Sisoft</span>
+        </a>
+        <h1>Entrar</h1>
+        <p>Aceda ao painel com o seu utilizador e senha.</p>
+
+        <form class="login-form" id="login-form" autocomplete="on">
+          <div class="field">
+            <label for="username">Utilizador ou email</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              required
+              autofocus
+            />
+          </div>
+          <div class="field">
+            <label for="password">Senha</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <p class="form-msg" id="form-msg" role="alert" aria-live="polite"></p>
+          <button class="btn btn-signal" type="submit" id="submit-btn">Entrar</button>
+        </form>
+
+        <p class="login-foot">
+          <a href="/">← Voltar ao site</a>
+        </p>
+      </div>
+    </main>
+    <script src="/js/login.js"></script>
+  </body>
+</html>

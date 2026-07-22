@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Painel de controlo Sisoft" />
+    <title>Painel — Sisoft</title>
+    <meta name="application-name" content="Sisoft" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body class="app-body">
+    <header class="app-top">
+      <a class="brand" href="/painel.html" aria-label="Sisoft">
+        <img src="/assets/logo.png" alt="Sisoft" width="32" height="32" />
+        <span>Sisoft Controlo</span>
+      </a>
+      <div class="app-user">
+        <span id="user-label">—</span>
+        <button class="btn btn-ghost" type="button" id="logout-btn">Sair</button>
+      </div>
+    </header>
+
+    <div class="app-layout">
+      <nav class="app-nav" aria-label="Painel">
+        <a href="#resumo" class="is-active" data-view="resumo">Resumo</a>
+        <a href="#pedidos" data-view="pedidos">Pedidos</a>
+        <a href="#clientes" data-view="clientes">Clientes</a>
+        <a href="#servicos" data-view="servicos">Serviços</a>
+      </nav>
+
+      <main class="app-main">
+        <h1 id="view-title">Resumo</h1>
+        <p class="lead" id="view-lead">Visão geral do controlo Sisoft.</p>
+        <div id="view-content"></div>
+      </main>
+    </div>
+
+    <script src="/js/painel.js"></script>
+  </body>
+</html>

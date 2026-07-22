@@ -89,11 +89,11 @@ textarea {
 
 .bg-waves {
   position: absolute;
-  right: -8%;
-  top: -5%;
-  width: min(78vw, 920px);
+  right: -12%;
+  top: -8%;
+  width: min(88vw, 1040px);
   height: auto;
-  opacity: 0.95;
+  opacity: 1;
   pointer-events: none;
   animation: wave-shift 12s ease-in-out infinite alternate;
 }
@@ -245,6 +245,7 @@ textarea {
 .btn-cyan:hover {
   background: linear-gradient(135deg, #9ae6ff, #5ad4ff);
   box-shadow: 0 0 32px rgba(62, 203, 255, 0.55), 0 14px 34px rgba(26, 159, 217, 0.4);
+  color: #04122f;
 }
 
 .btn-lg {
@@ -342,17 +343,18 @@ textarea {
 }
 
 .hero-feature h3 {
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.35rem;
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   letter-spacing: -0.02em;
 }
 
 .hero-feature p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  max-width: 12rem;
 }
 
 .hero-cta {
@@ -364,31 +366,31 @@ textarea {
   z-index: 1;
   display: grid;
   place-items: center;
-  min-height: 520px;
+  min-height: 560px;
   animation: float-in 1.2s var(--ease) both;
 }
 
 .hero-glow {
   position: absolute;
-  width: 78%;
-  height: 62%;
+  width: 88%;
+  height: 72%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(62, 203, 255, 0.42), transparent 70%);
-  filter: blur(10px);
+  background: radial-gradient(circle, rgba(62, 203, 255, 0.5), transparent 68%);
+  filter: blur(14px);
   animation: pulse-glow 5s ease-in-out infinite;
 }
 
 .hero-product {
   position: relative;
   z-index: 2;
-  width: min(100%, 560px);
-  border-radius: 1.75rem;
-  border: 1px solid rgba(62, 203, 255, 0.2);
-  background: rgba(5, 13, 42, 0.35);
-  box-shadow:
-    0 0 0 1px rgba(62, 203, 255, 0.08),
-    0 28px 70px rgba(4, 12, 40, 0.55),
-    0 0 40px rgba(62, 203, 255, 0.12);
+  width: min(108%, 620px);
+  max-width: none;
+  border: 0;
+  border-radius: 1.25rem;
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 30px 55px rgba(4, 12, 40, 0.65))
+    drop-shadow(0 0 28px rgba(62, 203, 255, 0.22));
   animation: float-product 6s ease-in-out infinite;
 }
 
@@ -981,15 +983,25 @@ tr:last-child td {
     grid-template-columns: 1fr 1fr;
   }
 
+  .hero {
+    padding-top: 6.5rem;
+  }
+
   .hero-visual {
-    order: -1;
-    min-height: 320px;
+    order: 0;
+    min-height: 280px;
+    margin-top: 0.5rem;
+  }
+
+  .hero-product {
+    width: min(100%, 420px);
   }
 
   .bg-waves {
-    opacity: 0.55;
-    width: 110%;
-    right: -20%;
+    opacity: 0.7;
+    width: 120%;
+    right: -28%;
+    top: 8%;
   }
 }
 

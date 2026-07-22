@@ -999,8 +999,6 @@
             ${
               history.length
                 ? history
-                    .slice()
-                    .reverse()
                     .map(
                       (h) => `<tr>
                       <td>${escapeHtml(formatDate(h.created_at))}</td>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glass Dock — Preview Windows 11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --glass: rgba(255, 255, 255, 0.42);
+      --glass-strong: rgba(255, 255, 255, 0.72);
+      --glass-card: rgba(255, 255, 255, 0.88);
+      --stroke: rgba(255, 255, 255, 0.65);
+      --text: #2a3544;
+      --muted: #6b7a8d;
+      --accent: #4a90d9;
+      --radius-win: 28px;
+      --shadow: 0 24px 64px rgba(60, 100, 150, 0.22);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", Inter, system-ui, sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+      background: #9bbfe8;
+    }
+
+    .desktop {
+      min-height: 100vh;
+      position: relative;
+      background:
+        radial-gradient(ellipse 60% 45% at 20% 75%, rgba(126, 176, 232, 0.55), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(232, 244, 252, 0.7), transparent 55%),
+        linear-gradient(135deg, #b8d4f0 0%, #c5def5 35%, #a8c8eb 70%, #9bbfe8 100%);
+      padding: 28px 24px 100px;
+    }
+
+    .ribbons {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .ribbons svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.9;
+    }
+
+    /* Top search */
+    .top-search {
+      position: relative;
+      z-index: 5;
+      width: min(420px, 88vw);
+      margin: 8px auto 28px;
+      height: 44px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 8px 28px rgba(80, 120, 170, 0.18);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
+      backdrop-filter: blur(20px);
+      animation: floatIn 0.7s ease both;
+    }
+
+    .top-search .icon {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .top-search .icon::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+      right: -5px;
+      bottom: -3px;
+      transform: rotate(45deg);
+    }
+
+    .top-search span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    /* Explorer window */
+    .explorer {
+      position: relative;
+      z-index: 4;
+      width: min(1080px, 96vw);
+      margin: 0 auto;
+      border-radius: var(--radius-win);
+      background: rgba(245, 250, 255, 0.48);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(28px) saturate(1.35);
+      -webkit-backdrop-filter: blur(28px) saturate(1.35);
+      overflow: hidden;
+      animation: riseIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      grid-template-rows: auto auto 1fr auto;
+      min-height: 580px;
+    }
+
+    .titlebar {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px 8px;
+      gap: 12px;
+    }
+
+    .titlebar .app {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      padding-left: 6px;
+    }
+
+    .titlebar .app .logo {
+      width: 18px;
+      height: 14px;
+      border-radius: 3px;
+      background: linear-gradient(135deg, #f5c451, #e8a317);
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.08);
+    }
+
+    .win-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .win-controls i {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(120, 140, 160, 0.25);
+      display: block;
+    }
+
+    .toolbar {
+      grid-column: 2;
+      grid-row: 2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      padding: 0 18px 12px;
+    }
+
+    .nav-btns {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-btns button,
+    .actions button {
+      border: none;
+      background: transparent;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      cursor: default;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-btns button:hover,
+    .actions button:hover {
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .breadcrumb {
+      flex: 1;
+      min-width: 160px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      font-size: 13px;
+      color: var(--muted);
+      gap: 6px;
+    }
+
+    .breadcrumb strong { color: var(--text); font-weight: 600; }
+
+    .actions {
+      display: flex;
+      gap: 2px;
+      flex-wrap: wrap;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-column: 1;
+      grid-row: 2 / 4;
+      padding: 4px 12px 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      border-right: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .side-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--text);
+      cursor: default;
+    }
+
+    .side-item.active,
+    .side-item:hover {
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .side-item .si {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      flex-shrink: 0;
+    }
+
+    .side-section {
+      margin-top: 14px;
+      padding: 0 10px 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 10px;
+      font-size: 13px;
+      border-radius: 10px;
+    }
+
+    .tag:hover { background: rgba(255, 255, 255, 0.4); }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Main */
+    .main {
+      grid-column: 2;
+      grid-row: 3;
+      padding: 4px 18px 16px;
+      overflow: auto;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 8px 4px 12px;
+    }
+
+    .quick-access {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .qa-card {
+      background: var(--glass-card);
+      border-radius: 16px;
+      padding: 16px 12px 14px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 16px rgba(80, 120, 170, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .qa-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(80, 120, 170, 0.16);
+    }
+
+    .folder-icon {
+      width: 48px;
+      height: 40px;
+      margin: 0 auto 10px;
+      border-radius: 6px 8px 8px 8px;
+      position: relative;
+    }
+
+    .folder-icon::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 18px;
+      height: 8px;
+      border-radius: 4px 4px 0 0;
+      background: inherit;
+      filter: brightness(1.08);
+    }
+
+    .qa-card h4 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .qa-card p {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .explorer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto 1fr auto;
+      }
+      .sidebar {
+        grid-column: 1;
+        grid-row: 2;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.35);
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .toolbar { grid-column: 1; grid-row: 3; }
+      .main { grid-column: 1; grid-row: 4; }
+      .tabs { grid-row: 5; }
+      .lists { grid-template-columns: 1fr; }
+    }
+
+    .list-card {
+      background: var(--glass-card);
+      border-radius: 16px;
+      padding: 14px 14px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .list-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 28px 1fr auto;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 4px;
+      border-radius: 8px;
+      font-size: 12.5px;
+    }
+
+    .row:hover { background: rgba(230, 240, 250, 0.7); }
+
+    .row .fi {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+    }
+
+    .row .meta {
+      color: var(--muted);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    /* Bottom tabs */
+    .tabs {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 14px 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.65);
+      font-size: 12.5px;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .tab-add {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.4);
+      color: var(--muted);
+      font-size: 16px;
+      border: none;
+    }
+
+    /* Dock */
+    .dock {
+      position: fixed;
+      z-index: 20;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      box-shadow: 0 12px 40px rgba(50, 90, 140, 0.25);
+      animation: dockIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+    }
+
+    .dock button {
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 12px;
+      background: transparent;
+      cursor: default;
+      display: grid;
+      place-items: center;
+      transition: transform 0.2s ease, background 0.2s ease;
+      position: relative;
+    }
+
+    .dock button:hover {
+      background: rgba(255, 255, 255, 0.55);
+      transform: translateY(-4px) scale(1.06);
+    }
+
+    .dock button.active::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .dock-ic {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+    }
+
+    .banner {
+      position: relative;
+      z-index: 6;
+      max-width: 1080px;
+      margin: 0 auto 18px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.45;
+      animation: floatIn 0.6s ease both;
+    }
+
+    .banner code {
+      background: rgba(255,255,255,0.7);
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(28px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes dockIn {
+      from { opacity: 0; transform: translateX(-50%) translateY(24px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="desktop">
+    <div class="ribbons" aria-hidden="true">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="r1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#6BA3E0" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#A8CFF5" stop-opacity="0.45"/>
+          </linearGradient>
+          <linearGradient id="r2" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4A8FD4" stop-opacity="0.75"/>
+            <stop offset="100%" stop-color="#7EB4E8" stop-opacity="0.35"/>
+          </linearGradient>
+          <filter id="blur"><feGaussianBlur stdDeviation="8"/></filter>
+        </defs>
+        <path d="M-80,580 C220,360 420,680 700,480 C980,280 1180,620 1500,380 C1650,260 1750,340 1720,300"
+              fill="none" stroke="url(#r1)" stroke-width="72" stroke-linecap="round" filter="url(#blur)"/>
+        <path d="M-40,760 C260,540 480,820 780,600 C1080,380 1280,740 1580,520"
+              fill="none" stroke="url(#r2)" stroke-width="56" stroke-linecap="round" filter="url(#blur)" opacity="0.85"/>
+        <path d="M80,160 C320,360 520,80 820,280 C1120,480 1320,160 1620,320"
+              fill="none" stroke="url(#r1)" stroke-width="48" stroke-linecap="round" filter="url(#blur)" opacity="0.55"/>
+      </svg>
+    </div>
+
+    <div class="banner">
+      <strong>Glass Dock</strong> — pré-visualização do layout. Para aplicar no Windows 11, use
+      <code>scripts/Apply-GlassDock.ps1</code> e as ferramentas em <code>docs/FERRAMENTAS.md</code>.
+    </div>
+
+    <div class="top-search" title="Barra de pesquisa flutuante (Rainmeter)">
+      <div class="icon"></div>
+      <span>Type here to search</span>
+    </div>
+
+    <div class="explorer" role="application" aria-label="Files">
+      <div class="titlebar">
+        <div class="app"><span class="logo"></span> Files</div>
+        <div class="win-controls" aria-hidden="true"><i></i><i></i><i></i></div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="side-item active"><span class="si" style="background:#5B9BE8"></span> Home</div>
+        <div class="side-item"><span class="si" style="background:#3B8ADB"></span> OneDrive</div>
+        <div class="side-section">This PC</div>
+        <div class="side-item"><span class="si" style="background:#7BC67E"></span> Desktop</div>
+        <div class="side-item"><span class="si" style="background:#F0B429"></span> Documents</div>
+        <div class="side-item"><span class="si" style="background:#E86B6B"></span> Downloads</div>
+        <div class="side-item"><span class="si" style="background:#A78BFA"></span> Pictures</div>
+        <div class="side-item"><span class="si" style="background:#F472B6"></span> Music</div>
+        <div class="side-section">Tags</div>
+        <div class="tag"><span class="dot" style="background:#3B82F6"></span> Work</div>
+        <div class="tag"><span class="dot" style="background:#22C55E"></span> Fun stuffs</div>
+        <div class="tag"><span class="dot" style="background:#EF4444"></span> My Trips</div>
+        <div class="tag"><span class="dot" style="background:#EC4899"></span> Logos</div>
+        <div class="tag"><span class="dot" style="background:#EAB308"></span> Audios</div>
+      </aside>
+
+      <div class="toolbar">
+        <div class="nav-btns">
+          <button title="Back">←</button>
+          <button title="Forward">→</button>
+          <button title="Up">↑</button>
+          <button title="Refresh">⟳</button>
+        </div>
+        <div class="breadcrumb">> <strong>Home</strong> ></div>
+        <div class="actions">
+          <button title="Cut">✂</button>
+          <button title="Copy">⧉</button>
+          <button title="Rename">Aa</button>
+          <button title="Share">⤴</button>
+          <button title="Delete">🗑</button>
+          <button title="Sort">⇅</button>
+          <button title="View">☰</button>
+        </div>
+      </div>
+
+      <main class="main">
+        <div class="section-title">Quick access</div>
+        <div class="quick-access">
+          <div class="qa-card">
+            <div class="folder-icon" style="background:linear-gradient(180deg,#8FD19A,#5BB86A)"></div>
+            <h4>Desktop</h4>
+            <p>9 items</p>
+          </div>
+          <div class="qa-card">
+            <div class="folder-icon" style="background:linear-gradient(180deg,#F6D36A,#E8B84A)"></div>
+            <h4>Documents</h4>
+            <p>24 items</p>
+          </div>
+          <div class="qa-card">
+            <div class="folder-icon" style="background:linear-gradient(180deg,#7EB6F0,#4A90D9)"></div>
+            <h4>Downloads</h4>
+            <p>128 items</p>
+          </div>
+          <div class="qa-card">
+            <div class="folder-icon" style="background:linear-gradient(180deg,#F0A0C8,#E06BA0)"></div>
+            <h4>Pictures</h4>
+            <p>56 items</p>
+          </div>
+          <div class="qa-card">
+            <div class="folder-icon" style="background:linear-gradient(180deg,#C4A8F5,#9B7AE8)"></div>
+            <h4>Music</h4>
+            <p>312 items</p>
+          </div>
+          <div class="qa-card">
+            <div class="folder-icon" style="background:linear-gradient(180deg,#F5A88A,#E87A5A)"></div>
+            <h4>Videos</h4>
+            <p>18 items</p>
+          </div>
+        </div>
+
+        <div class="lists">
+          <div class="list-card">
+            <h3>Favorites</h3>
+            <div class="row"><span class="fi" style="background:#60A5FA"></span><span>Brand Guidelines.fig</span><span class="meta">Design</span></div>
+            <div class="row"><span class="fi" style="background:#34D399"></span><span>Q3 Budget.xlsx</span><span class="meta">Sheet</span></div>
+            <div class="row"><span class="fi" style="background:#F472B6"></span><span>Trip Portugal</span><span class="meta">Folder</span></div>
+            <div class="row"><span class="fi" style="background:#FBBF24"></span><span>Logo Final.ai</span><span class="meta">Vector</span></div>
+          </div>
+          <div class="list-card">
+            <h3>Recent</h3>
+            <div class="row"><span class="fi" style="background:#A78BFA"></span><span>Presentation.pptx</span><span class="meta">Yesterday</span></div>
+            <div class="row"><span class="fi" style="background:#38BDF8"></span><span>Invoice-240.pdf</span><span class="meta">Mon</span></div>
+            <div class="row"><span class="fi" style="background:#FB7185"></span><span>Moodboard.png</span><span class="meta">Sun</span></div>
+            <div class="row"><span class="fi" style="background:#4ADE80"></span><span>Audio Mix 03</span><span class="meta">Fri</span></div>
+          </div>
+        </div>
+      </main>
+
+      <div class="tabs">
+        <div class="tab"><span class="si" style="width:14px;height:14px;border-radius:4px;background:#F5C451;display:inline-block"></span> Home</div>
+        <button class="tab-add" title="New tab">+</button>
+      </div>
+    </div>
+
+    <nav class="dock" aria-label="Taskbar dock">
+      <button title="Start"><span class="dock-ic" style="background:linear-gradient(135deg,#5B9BE8,#3B7AD0);border-radius:8px"></span></button>
+      <button title="Search"><span class="dock-ic" style="background:linear-gradient(135deg,#94A3B8,#64748B);border-radius:50%"></span></button>
+      <button title="Task View"><span class="dock-ic" style="background:linear-gradient(135deg,#7DD3FC,#38BDF8)"></span></button>
+      <button class="active" title="File Explorer"><span class="dock-ic" style="background:linear-gradient(135deg,#F6D36A,#E8A317)"></span></button>
+      <button title="Edge"><span class="dock-ic" style="background:linear-gradient(135deg,#60A5FA,#2563EB);border-radius:50%"></span></button>
+    </nav>
+  </div>
+</body>
+</html>

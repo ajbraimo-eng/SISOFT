@@ -1,0 +1,19 @@
+{
+  "Accent": {
+    "Taskbar": "Clear",
+    "Focused": "Acrylic",
+    "Maximized": "Normal",
+    "StartOpened": "Normal",
+    "SearchOpened": "Normal",
+    "TaskViewOpened": "Normal"
+  },
+  "Acrylic": {
+    "Opacity": 160,
+    "Tint": "#E8F2FC",
+    "Blur": true
+  },
+  "Clear": {
+    "Opacity": 0
+  },
+  "Notes": "No TranslucentTB: Taskbar = Clear (ou Acrylic claro). Mantenha o modo claro do Windows."
+}

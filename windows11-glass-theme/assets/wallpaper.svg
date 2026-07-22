@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B8D4F0"/>
+      <stop offset="35%" stop-color="#C5DEF5"/>
+      <stop offset="70%" stop-color="#A8C8EB"/>
+      <stop offset="100%" stop-color="#9BBFE8"/>
+    </linearGradient>
+    <linearGradient id="r1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6BA3E0" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#8BB8EC" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#A8CFF5" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="r2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4A8FD4" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7EB4E8" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="r3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5B9BE0" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#D0E6FA" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="40" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="3840" height="2160" fill="url(#bg)"/>
+
+  <!-- soft ambient blobs -->
+  <ellipse cx="900" cy="1600" rx="700" ry="450" fill="#7EB0E8" opacity="0.35" filter="url(#soft)"/>
+  <ellipse cx="3000" cy="500" rx="800" ry="500" fill="#E8F4FC" opacity="0.45" filter="url(#soft)"/>
+  <ellipse cx="2000" cy="1100" rx="900" ry="600" fill="#A0C8F0" opacity="0.25" filter="url(#soft)"/>
+
+  <!-- flowing 3D ribbon-like tubes -->
+  <g filter="url(#glow)" opacity="0.92">
+    <path d="M-200,1400 C400,900 900,1700 1500,1200 C2100,700 2600,1500 3200,900 C3600,550 4000,800 4200,600"
+          fill="none" stroke="url(#r1)" stroke-width="180" stroke-linecap="round"/>
+    <path d="M-100,1800 C500,1300 1100,2000 1800,1500 C2500,1000 2900,1800 3600,1300 C4000,1050 4300,1200 4500,1000"
+          fill="none" stroke="url(#r2)" stroke-width="140" stroke-linecap="round" opacity="0.85"/>
+    <path d="M200,400 C800,900 1200,200 1900,700 C2600,1200 3000,400 3700,850"
+          fill="none" stroke="url(#r3)" stroke-width="120" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- highlight streaks -->
+  <path d="M400,1250 C900,850 1400,1450 2000,1050 C2500,750 3000,1300 3600,900"
+        fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" opacity="0.35"/>
+  <path d="M600,1650 C1100,1250 1700,1850 2300,1400"
+        fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" opacity="0.25"/>
+</svg>

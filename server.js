@@ -107,11 +107,15 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.redirect('/login.html');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/login.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.get('/app.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'app.html'));
 });
 
 function isCeo(userId) {
@@ -2144,14 +2148,14 @@ function startServer(options = {}) {
   return new Promise((resolve, reject) => {
     const server = app.listen(PORT, HOST, () => {
       const urls = config.getAccessUrls();
-      console.log(`Servidor Isoft a escutar em ${HOST}:${PORT}`);
+      console.log(`Servidor Sisoft a escutar em ${HOST}:${PORT}`);
       urls.forEach((url) => console.log(`  → ${url}`));
       if (config.PUBLIC_URL) {
         console.log(`URL pública configurada: ${config.PUBLIC_URL}`);
       }
       reports.startMonthlyReportScheduler();
       if (openBrowser) {
-        const target = `http://localhost:${PORT}/login.html`;
+        const target = `http://localhost:${PORT}/`;
         const prefs = desktop.readSettings();
         console.log(
           `A abrir navegador${prefs.openFullscreen ? ' (ecrã inteiro)' : ''}: ${target}`

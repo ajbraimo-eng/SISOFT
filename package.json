@@ -1,7 +1,7 @@
 {
-  "name": "stock-system",
+  "name": "sisoft",
   "version": "1.0.0",
-  "description": "Sistema simples de stock com API e frontend.",
+  "description": "Sisoft — sistema de gestão de stock, oficina e faturação.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

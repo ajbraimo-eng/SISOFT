@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sisoft — sistema de gestão para armazém, obras de oficina, cotações e faturação."
+    />
+    <title>Sisoft — Gestão de oficina e stock</title>
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+    <div class="site-bg" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a class="brand" href="/">
+          <img src="/assets/logo.svg" alt="" width="36" height="36" />
+          Sisoft
+        </a>
+        <nav aria-label="Principal">
+          <ul class="nav-links">
+            <li><a href="#modulos">Módulos</a></li>
+            <li><a href="#porque">Porquê</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a class="btn btn-signal" href="/login.html">Entrar</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-signal" href="/login.html" hidden data-mobile-login>Entrar</a>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero">
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 820 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="120" y1="80" x2="700" y2="560" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1FA88A" stop-opacity="0.55" />
+                <stop offset="0.55" stop-color="#123447" stop-opacity="0.35" />
+                <stop offset="1" stop-color="#F0A202" stop-opacity="0.2" />
+              </linearGradient>
+              <linearGradient id="g2" x1="260" y1="140" x2="620" y2="480" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#E8F2F0" stop-opacity="0.18" />
+                <stop offset="1" stop-color="#E8F2F0" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M90 470 L210 250 L340 470 Z"
+              stroke="url(#g1)"
+              stroke-width="2"
+              fill="url(#g2)"
+            />
+            <path
+              d="M280 490 L430 180 L580 490 Z"
+              stroke="#E8F2F0"
+              stroke-opacity="0.35"
+              stroke-width="2"
+              fill="rgba(31,168,138,0.08)"
+            />
+            <path
+              d="M480 500 L640 220 L780 500 Z"
+              stroke="#F0A202"
+              stroke-opacity="0.55"
+              stroke-width="2"
+              fill="rgba(240,162,2,0.06)"
+            />
+            <rect x="180" y="390" width="420" height="140" rx="4" stroke="#E8F2F0" stroke-opacity="0.2" />
+            <path d="M180 430 H600" stroke="#E8F2F0" stroke-opacity="0.12" />
+            <path d="M180 470 H600" stroke="#E8F2F0" stroke-opacity="0.12" />
+            <circle cx="230" cy="410" r="5" fill="#F0A202" />
+            <circle cx="270" cy="410" r="5" fill="#1FA88A" />
+            <rect x="320" y="448" width="120" height="10" rx="2" fill="#1FA88A" fill-opacity="0.7" />
+            <rect x="320" y="488" width="180" height="10" rx="2" fill="#F0A202" fill-opacity="0.55" />
+            <path
+              d="M120 160 C220 120, 320 200, 420 150 C520 100, 620 140, 700 90"
+              stroke="#E8F2F0"
+              stroke-opacity="0.18"
+              stroke-width="1.5"
+              stroke-dasharray="6 10"
+            />
+          </svg>
+        </div>
+
+        <div class="wrap hero-content">
+          <p class="brand-mark">Si<span>soft</span></p>
+          <h1>Stock, oficina e faturação sob o mesmo tecto.</h1>
+          <p>
+            O Sisoft organiza armazém, obras de oficina, cotações, facturas e a equipa — com
+            controlo claro no dia a dia.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-signal" href="/login.html">Aceder ao sistema</a>
+            <a class="btn btn-ghost" href="#modulos">Ver módulos</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="modulos">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <h2>Tudo o que a oficina precisa</h2>
+            <p>
+              Módulos pensados para quem gere peças, veículos em serviço e clientes sem perder o
+              rasto.
+            </p>
+          </div>
+          <div class="modules">
+            <article class="module reveal">
+              <span class="module-index">01</span>
+              <h3>Armazém & inventário</h3>
+              <p>Entradas, saídas e stock actualizado para saber o que tem e o que falta.</p>
+            </article>
+            <article class="module reveal">
+              <span class="module-index">02</span>
+              <h3>Obras & requisições</h3>
+              <p>Registe veículos em serviço e peça materiais do armazém com histórico.</p>
+            </article>
+            <article class="module reveal">
+              <span class="module-index">03</span>
+              <h3>Cotações & facturas</h3>
+              <p>Crie propostas, emita facturas e mantenha o histórico financeiro organizado.</p>
+            </article>
+            <article class="module reveal">
+              <span class="module-index">04</span>
+              <h3>Clientes & fornecedores</h3>
+              <p>Cadastro centralizado com contactos, documentos e notas da relação comercial.</p>
+            </article>
+            <article class="module reveal">
+              <span class="module-index">05</span>
+              <h3>Diário & relatórios</h3>
+              <p>Movimentos do dia e relatórios PDF para decisões com base em dados.</p>
+            </article>
+            <article class="module reveal">
+              <span class="module-index">06</span>
+              <h3>Equipa & chat</h3>
+              <p>Utilizadores, sessões activas e mensagens internas com confirmação de leitura.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section why" id="porque">
+        <div class="wrap why-grid">
+          <div class="why-copy reveal">
+            <h2>Feito para o ritmo da oficina</h2>
+            <p>
+              Menos folhas dispersas, mais visão. O Sisoft junta armazém, obras e faturação para a
+              equipa trabalhar com a mesma informação.
+            </p>
+            <ul class="why-list">
+              <li>Acesso local ou na rede da empresa</li>
+              <li>Controlo por perfil (CEO e utilizadores)</li>
+              <li>Recuperação de senha por email ou SMS</li>
+              <li>Relatórios prontos para imprimir ou arquivar</li>
+            </ul>
+          </div>
+          <aside class="panel reveal" aria-label="Indicadores ilustrativos">
+            <p class="panel-label">Visão operacional</p>
+            <div class="meter">
+              <div class="meter-row">
+                <span>Stock monitorizado <strong>92%</strong></span>
+                <div class="bar"><i style="--w: 92%"></i></div>
+              </div>
+              <div class="meter-row">
+                <span>Obras activas <strong>78%</strong></span>
+                <div class="bar"><i style="--w: 78%"></i></div>
+              </div>
+              <div class="meter-row">
+                <span>Facturas em dia <strong>86%</strong></span>
+                <div class="bar"><i style="--w: 86%"></i></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section cta" id="contacto">
+        <div class="wrap cta-box reveal">
+          <h2>Pronto para pôr a Sisoft a trabalhar consigo?</h2>
+          <p>
+            Entre no sistema ou fale connosco para activar a sua instalação.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-signal" href="/login.html">Entrar no Sisoft</a>
+            <a class="btn btn-ghost" href="mailto:sisoftcenter@gmail.com">sisoftcenter@gmail.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <span>© <span data-year></span> Sisoft</span>
+        <a href="mailto:sisoftcenter@gmail.com">Contacto</a>
+      </div>
+    </footer>
+
+    <script src="/js/site.js"></script>
+  </body>
+</html>

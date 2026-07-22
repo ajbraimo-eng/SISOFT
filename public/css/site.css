@@ -243,10 +243,6 @@ input {
   animation: rise 0.9s var(--ease) both;
 }
 
-.brand-mark::first-letter {
-  color: var(--signal);
-}
-
 .hero h1 {
   margin: 0 0 1rem;
   font-family: var(--font-display);

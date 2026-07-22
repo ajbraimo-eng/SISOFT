@@ -4,7 +4,7 @@ const os = require('os');
 const { spawn, exec } = require('child_process');
 
 const SETTINGS_FILE = path.join(__dirname, 'settings.json');
-const STARTUP_SHORTCUT_NAME = 'Isoft.lnk';
+const STARTUP_SHORTCUT_NAME = 'Sisoft.lnk';
 
 const DEFAULT_SETTINGS = {
   openFullscreen: true,
@@ -60,7 +60,9 @@ function getStartupShortcutPath() {
 
 function getLauncherBatPath() {
   const candidates = [
+    path.join(__dirname, 'Iniciar-Sisoft.bat'),
     path.join(__dirname, 'Iniciar-Isoft.bat'),
+    path.join(__dirname, '..', 'Iniciar-Sisoft.bat'),
     path.join(__dirname, '..', 'Iniciar-Isoft.bat')
   ];
   return candidates.find((p) => fs.existsSync(p)) || candidates[0];
@@ -73,7 +75,7 @@ function createStartupShortcut() {
     }
     const bat = getLauncherBatPath();
     if (!fs.existsSync(bat)) {
-      return resolve({ ok: false, error: 'Iniciar-Isoft.bat não encontrado.' });
+      return resolve({ ok: false, error: 'Iniciar-Sisoft.bat não encontrado.' });
     }
     const startupDir = getStartupDir();
     if (!startupDir) {
@@ -83,13 +85,22 @@ function createStartupShortcut() {
       if (!fs.existsSync(startupDir)) {
         fs.mkdirSync(startupDir, { recursive: true });
       }
-      const cmdPath = path.join(startupDir, 'Isoft.cmd');
+      const cmdPath = path.join(startupDir, 'Sisoft.cmd');
       const content = [
         '@echo off',
         `start "" /min ${JSON.stringify(bat)}`,
         ''
       ].join('\r\n');
       fs.writeFileSync(cmdPath, content, 'utf8');
+      // Limpar atalho antigo Isoft, se existir
+      for (const legacy of ['Isoft.cmd', 'Isoft.lnk']) {
+        const legacyPath = path.join(startupDir, legacy);
+        try {
+          if (fs.existsSync(legacyPath)) fs.unlinkSync(legacyPath);
+        } catch {
+          /* ignore */
+        }
+      }
       resolve({ ok: true, path: cmdPath, mode: 'cmd' });
     } catch (err) {
       resolve({ ok: false, error: err.message || 'Falha ao criar arranque automático.' });
@@ -103,7 +114,9 @@ function removeStartupShortcut() {
   }
   const paths = [
     getStartupShortcutPath(),
-    path.join(getStartupDir(), 'Isoft.cmd')
+    path.join(getStartupDir(), 'Sisoft.cmd'),
+    path.join(getStartupDir(), 'Isoft.cmd'),
+    path.join(getStartupDir(), 'Isoft.lnk')
   ];
   for (const file of paths) {
     try {
@@ -120,8 +133,10 @@ function isAutoStartEnabled() {
   const startupDir = getStartupDir();
   if (!startupDir) return false;
   return (
+    fs.existsSync(path.join(startupDir, 'Sisoft.cmd')) ||
+    fs.existsSync(path.join(startupDir, STARTUP_SHORTCUT_NAME)) ||
     fs.existsSync(path.join(startupDir, 'Isoft.cmd')) ||
-    fs.existsSync(path.join(startupDir, STARTUP_SHORTCUT_NAME))
+    fs.existsSync(path.join(startupDir, 'Isoft.lnk'))
   );
 }
 
@@ -147,7 +162,7 @@ function findBrowserExecutable() {
 }
 
 /**
- * Abre o Isoft no browser. Em Windows, usa Edge/Chrome em modo app + fullscreen.
+ * Abre o Sisoft no browser. Em Windows, usa Edge/Chrome em modo app + fullscreen.
  */
 function openInBrowser(url, options = {}) {
   const fullscreen =

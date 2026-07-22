@@ -1005,7 +1005,7 @@ app.post('/api/recover', recoverRateLimit, async (req, res) => {
     });
 
     const emailText = [
-      'Isoft — recuperação de senha',
+      'Sisoft — recuperação de senha',
       '',
       `Olá${user.fullName ? ` ${user.fullName}` : ''},`,
       '',
@@ -1016,14 +1016,14 @@ app.post('/api/recover', recoverRateLimit, async (req, res) => {
       '',
       'Se não pediu esta recuperação, ignore este email.',
       '',
-      '— Equipa Isoft / Sisoft'
+      '— Equipa Sisoft'
     ].join('\n');
 
     let sendResult;
     try {
       sendResult = await mail.sendEmail(
         normalized,
-        'Isoft — código de recuperação de senha',
+        'Sisoft — código de recuperação de senha',
         emailText
       );
     } catch (error) {
@@ -1084,7 +1084,7 @@ app.post('/api/recover', recoverRateLimit, async (req, res) => {
       attempts: 0
     });
 
-    const smsText = `Isoft: o seu código de recuperação é ${code}. Válido por 10 minutos.`;
+    const smsText = `Sisoft: o seu código de recuperação é ${code}. Válido por 10 minutos.`;
     let sendResult;
     try {
       sendResult = await sms.sendSms(normalized, smsText);
@@ -1127,7 +1127,7 @@ app.post('/api/recover', recoverRateLimit, async (req, res) => {
     return res.json({
       title: 'Pedido registado',
       message: message
-        ? 'O administrador Isoft vai analisar o seu pedido e contactá-lo em breve.'
+        ? 'O administrador Sisoft vai analisar o seu pedido e contactá-lo em breve.'
         : `Pedido de redefinição para “${username}” enviado ao administrador.`
     });
   }

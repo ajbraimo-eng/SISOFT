@@ -11,9 +11,7 @@
     <meta name="application-name" content="Sisoft" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
     <link rel="icon" href="/assets/logo.png" type="image/png" />
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
@@ -26,20 +24,22 @@
     <div class="site-bg" aria-hidden="true"></div>
 
     <header class="nav">
-      <div class="wrap nav-inner">
-        <a class="brand" href="/" aria-label="Sisoft">
-          <img src="/assets/logo.png" alt="Sisoft" width="48" height="48" />
-          <span>Sisoft</span>
-        </a>
-        <nav aria-label="Principal">
-          <ul class="nav-links">
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#porque">Porquê</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a class="btn btn-signal" href="/login.html">Painel</a></li>
-          </ul>
-        </nav>
-        <a class="btn btn-signal" href="/login.html" hidden data-mobile-login>Painel</a>
+      <div class="wrap">
+        <div class="nav-inner glass">
+          <a class="brand" href="/" aria-label="Sisoft">
+            <img src="/assets/logo.png" alt="Sisoft" width="44" height="44" />
+            <span>Sisoft</span>
+          </a>
+          <nav aria-label="Principal">
+            <ul class="nav-links">
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#porque">Porquê</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+              <li><a class="btn btn-white" href="/login.html">Painel</a></li>
+            </ul>
+          </nav>
+          <a class="btn btn-white" href="/login.html" hidden data-mobile-login>Painel</a>
+        </div>
       </div>
     </header>
 
@@ -47,47 +47,29 @@
       <section class="hero">
         <div class="wrap hero-grid">
           <div class="hero-copy">
-            <p class="brand-mark" aria-label="Sisoft">Sisoft</p>
-            <h1>Informática completa para a sua empresa e o seu dia a dia.</h1>
+            <p class="brand-mark">Sisoft</p>
+            <h1>Inovar. Transformar. Crescer.</h1>
             <p class="hero-lead">
               Reparação de equipamentos, criação de sites e apps, design, redes e suporte técnico —
               soluções práticas com acompanhamento próximo.
             </p>
-
-            <div class="hero-features">
-              <article class="hero-feature">
-                <div class="hero-feature-icon" aria-hidden="true">01</div>
-                <h3>Reparação</h3>
-                <p>Computadores, portáteis e equipamentos — diagnóstico e manutenção.</p>
-              </article>
-              <article class="hero-feature">
-                <div class="hero-feature-icon" aria-hidden="true">02</div>
-                <h3>Sites & apps</h3>
-                <p>Criação de websites e aplicações à medida do seu negócio.</p>
-              </article>
-              <article class="hero-feature">
-                <div class="hero-feature-icon" aria-hidden="true">03</div>
-                <h3>Design & rede</h3>
-                <p>Identidade visual, redes locais e ligação estável para a equipa.</p>
-              </article>
-            </div>
-
             <div class="hero-cta">
-              <a class="btn btn-signal" href="#contacto">Pedir orçamento</a>
+              <a class="btn btn-white" href="#servicos">Explorar serviços</a>
+              <a class="btn btn-ghost" href="#contacto">Pedir orçamento</a>
             </div>
           </div>
 
-          <div class="hero-stage" aria-hidden="true">
-            <div class="wave wave-1"></div>
-            <div class="wave wave-2"></div>
-            <div class="wave wave-3"></div>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <div class="hero-photo">
-              <img src="/assets/sisoft-hero.png" alt="" width="840" height="1120" decoding="async" />
+          <div class="hero-visual">
+            <span class="orb orb-1" aria-hidden="true"></span>
+            <span class="orb orb-2" aria-hidden="true"></span>
+            <div class="hero-visual-frame">
+              <img
+                src="/assets/hero-3d.png"
+                alt="Ilustração 3D de tecnologia e infraestrutura digital"
+                width="1280"
+                height="720"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -97,66 +79,40 @@
         <div class="wrap">
           <div class="section-head reveal">
             <h2>Serviços de informática</h2>
-            <p>
-              Da reparação ao digital: a Sisoft cobre o que precisa para trabalhar com tecnologia
-              sem complicação.
-            </p>
+            <p>Da reparação ao digital — a Sisoft cobre o essencial para a sua operação.</p>
           </div>
-          <div class="modules">
-            <article class="module reveal">
-              <span class="module-index">01</span>
-              <h3>Reparação de equipamentos</h3>
-              <p>
-                Computadores, portáteis, impressoras e periféricos — diagnóstico, reparação e
-                manutenção preventiva.
-              </p>
+          <div class="service-grid">
+            <article class="service-card glass reveal">
+              <img src="/assets/card-repair.png" alt="" width="512" height="512" />
+              <h3>Reparação</h3>
+              <p>Computadores, portáteis e equipamentos com diagnóstico e manutenção.</p>
+              <a class="btn btn-white" href="#contacto">Pedir</a>
             </article>
-            <article class="module reveal">
-              <span class="module-index">02</span>
-              <h3>Criação de sites</h3>
-              <p>
-                Sites institucionais, landing pages e lojas online com design claro e fácil de
-                actualizar.
-              </p>
+            <article class="service-card glass reveal">
+              <img src="/assets/card-web.png" alt="" width="512" height="512" />
+              <h3>Sites & apps</h3>
+              <p>Websites e aplicações à medida do seu negócio.</p>
+              <a class="btn btn-white" href="#contacto">Pedir</a>
             </article>
-            <article class="module reveal">
-              <span class="module-index">03</span>
-              <h3>Apps e sistemas</h3>
-              <p>
-                Aplicações e sistemas à medida para organizar processos, clientes e operações do
-                negócio.
-              </p>
-            </article>
-            <article class="module reveal">
-              <span class="module-index">04</span>
+            <article class="service-card glass reveal">
+              <img src="/assets/card-design.png" alt="" width="512" height="512" />
               <h3>Design</h3>
-              <p>
-                Identidade visual, logótipos, materiais digitais e interfaces alinhadas à sua
-                marca.
-              </p>
+              <p>Identidade visual, logótipos e interfaces digitais.</p>
+              <a class="btn btn-white" href="#contacto">Pedir</a>
             </article>
-            <article class="module reveal">
-              <span class="module-index">05</span>
-              <h3>Redes e infraestrutura</h3>
-              <p>
-                Instalação e configuração de redes, Wi-Fi, partilha de ficheiros e acesso seguro
-                na empresa.
-              </p>
-            </article>
-            <article class="module reveal">
-              <span class="module-index">06</span>
-              <h3>Suporte e outros</h3>
-              <p>
-                Instalação de software, backup, segurança, consultoria e apoio técnico contínuo.
-              </p>
+            <article class="service-card glass reveal">
+              <img src="/assets/card-network.png" alt="" width="512" height="512" />
+              <h3>Redes</h3>
+              <p>Wi-Fi, infraestrutura e ligação estável para a equipa.</p>
+              <a class="btn btn-white" href="#contacto">Pedir</a>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section why" id="porque">
+      <section class="section" id="porque">
         <div class="wrap why-grid">
-          <div class="why-copy reveal">
+          <div class="why-copy glass reveal">
             <h2>Tecnologia com acompanhamento real</h2>
             <p>
               Explicamos o problema, propomos a solução e acompanhamos a implementação — para a
@@ -169,7 +125,7 @@
               <li>Suporte depois da entrega</li>
             </ul>
           </div>
-          <aside class="panel reveal" aria-label="Áreas de actuação">
+          <aside class="panel glass reveal" aria-label="Áreas de actuação">
             <p class="panel-label">Áreas de actuação</p>
             <div class="meter">
               <div class="meter-row">
@@ -189,13 +145,23 @@
         </div>
       </section>
 
-      <section class="section cta" id="contacto">
-        <div class="wrap">
-          <div class="cta-box reveal">
-            <h2>Pronto para pôr a Sisoft a trabalhar consigo?</h2>
-            <p>
-              Envie o seu pedido. A equipa Sisoft responde com orçamento e próximos passos.
+      <section class="section" id="contacto">
+        <div class="wrap contact-grid">
+          <div class="contact-side glass reveal">
+            <h2>Fale com a Sisoft</h2>
+            <p class="contact-note">
+              Conte o que precisa — reparação, site, app, design, rede ou outro serviço de
+              informática.
             </p>
+            <p class="contact-alt" style="margin-top: 1.2rem">
+              Email:
+              <a href="mailto:sisoftcenter@gmail.com">sisoftcenter@gmail.com</a>
+            </p>
+          </div>
+
+          <div class="contact-panel reveal">
+            <h2>Formulário de contacto</h2>
+            <p class="contact-note">Enviamos resposta com orçamento e próximos passos.</p>
             <form class="contact-form" id="contact-form">
               <div class="field">
                 <label for="name">Nome</label>
@@ -227,12 +193,8 @@
                 <textarea id="message" name="message" rows="4" required></textarea>
               </div>
               <p class="form-msg" id="contact-msg" role="alert" aria-live="polite"></p>
-              <button class="btn btn-signal" type="submit">Enviar pedido</button>
+              <button class="btn btn-white" type="submit">Enviar pedido</button>
             </form>
-            <p class="contact-alt">
-              Ou escreva para
-              <a href="mailto:sisoftcenter@gmail.com">sisoftcenter@gmail.com</a>
-            </p>
           </div>
         </div>
       </section>

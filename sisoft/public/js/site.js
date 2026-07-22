@@ -24,7 +24,7 @@
           }
         }
       },
-      { threshold: 0.18, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.16, rootMargin: "0px 0px -40px 0px" }
     );
     reveals.forEach((el, i) => {
       el.style.transitionDelay = `${Math.min(i % 4, 3) * 0.08}s`;
@@ -34,14 +34,14 @@
     reveals.forEach((el) => el.classList.add("is-visible"));
   }
 
-  const stage = document.querySelector(".hero-stage");
-  if (stage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const visual = document.querySelector(".hero-visual");
+  if (visual && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     window.addEventListener(
       "pointermove",
       (event) => {
-        const x = (event.clientX / window.innerWidth - 0.5) * 14;
-        const y = (event.clientY / window.innerHeight - 0.5) * 10;
-        stage.style.transform = `translate(${x}px, ${y}px)`;
+        const x = (event.clientX / window.innerWidth - 0.5) * 12;
+        const y = (event.clientY / window.innerHeight - 0.5) * 8;
+        visual.style.transform = `translate(${x}px, ${y}px)`;
       },
       { passive: true }
     );

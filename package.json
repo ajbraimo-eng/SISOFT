@@ -1,7 +1,7 @@
 {
   "name": "sisoft",
   "version": "1.0.0",
-  "description": "Sisoft — sistema de gestão de stock, oficina e faturação.",
+  "description": "Sisoft — informática: reparação, sites, apps, design e redes.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

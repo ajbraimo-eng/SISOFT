@@ -9,6 +9,6 @@ if errorlevel 1 (
   exit /b 1
 )
 
-echo A iniciar Sisoft...
+echo A iniciar Sisoft (site + painel proprio)...
 start "Sisoft" /min cmd /c "node launcher.js"
 exit /b 0

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Isoft — Entrar</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+  <main class="login-page">
+    <div class="login-shell">
+      <div class="brand-mark">
+        <div class="logo">Is</div>
+        <h1>Isoft</h1>
+        <p>Gestão de stock, obras e oficina</p>
+      </div>
+
+      <section class="panel" id="loginPanel">
+        <h2>Entrar</h2>
+        <p class="lede">Use o seu utilizador e senha para aceder ao sistema.</p>
+        <div id="loginAlert" class="alert alert-error hidden"></div>
+        <form id="loginForm">
+          <div class="field">
+            <label for="username">Utilizador ou email</label>
+            <input id="username" name="username" autocomplete="username" required />
+          </div>
+          <div class="field">
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <div class="login-actions">
+            <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+          </div>
+        </form>
+        <div class="login-links">
+          <button type="button" id="showRecover">Recuperar senha</button>
+          <span style="color:var(--text-muted)">Sisoft Center</span>
+        </div>
+      </section>
+
+      <section class="panel hidden" id="recoverPanel">
+        <h2>Recuperar senha</h2>
+        <p class="lede">Receba um código por email ou SMS para redefinir a senha.</p>
+        <div id="recoverAlert" class="alert hidden"></div>
+
+        <div id="recoverStepRequest">
+          <div class="field">
+            <label for="recoverMethod">Método</label>
+            <select id="recoverMethod">
+              <option value="email">Email</option>
+              <option value="sms">SMS</option>
+            </select>
+          </div>
+          <div class="field" id="emailField">
+            <label for="recoverEmail">Email</label>
+            <input id="recoverEmail" type="email" placeholder="nome@empresa.com" />
+          </div>
+          <div class="field hidden" id="phoneField">
+            <label for="recoverPhone">Telemóvel</label>
+            <input id="recoverPhone" type="tel" placeholder="+258 84 000 0000" />
+          </div>
+          <div class="login-actions">
+            <button class="btn btn-primary btn-block" type="button" id="sendRecover">Enviar código</button>
+            <button class="btn btn-ghost btn-block" type="button" id="backToLogin">Voltar ao login</button>
+          </div>
+        </div>
+
+        <div id="recoverStepVerify" class="hidden">
+          <div class="field">
+            <label for="recoverCode">Código</label>
+            <input id="recoverCode" inputmode="numeric" maxlength="8" />
+          </div>
+          <div class="field">
+            <label for="newPassword">Nova senha</label>
+            <input id="newPassword" type="password" autocomplete="new-password" />
+          </div>
+          <div class="field">
+            <label for="confirmPassword">Confirmar senha</label>
+            <input id="confirmPassword" type="password" autocomplete="new-password" />
+          </div>
+          <div class="login-actions">
+            <button class="btn btn-primary btn-block" type="button" id="verifyRecover">Redefinir senha</button>
+            <button class="btn btn-ghost btn-block" type="button" id="restartRecover">Pedir novo código</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script>
+    const { api, setSession, getToken, toast, qs } = Isoft;
+
+    if (getToken()) {
+      window.location.href = '/app.html';
+    }
+
+    const loginPanel = qs('#loginPanel');
+    const recoverPanel = qs('#recoverPanel');
+    const loginAlert = qs('#loginAlert');
+    const recoverAlert = qs('#recoverAlert');
+    let recoverContext = { method: 'email', email: '', phone: '' };
+
+    function showAlert(el, message, type = 'error') {
+      el.className = `alert alert-${type}`;
+      el.textContent = message;
+      el.classList.remove('hidden');
+    }
+
+    function hideAlert(el) {
+      el.classList.add('hidden');
+      el.textContent = '';
+    }
+
+    qs('#showRecover').addEventListener('click', () => {
+      loginPanel.classList.add('hidden');
+      recoverPanel.classList.remove('hidden');
+      hideAlert(recoverAlert);
+    });
+
+    qs('#backToLogin').addEventListener('click', () => {
+      recoverPanel.classList.add('hidden');
+      loginPanel.classList.remove('hidden');
+    });
+
+    qs('#recoverMethod').addEventListener('change', (e) => {
+      const method = e.target.value;
+      qs('#emailField').classList.toggle('hidden', method !== 'email');
+      qs('#phoneField').classList.toggle('hidden', method !== 'sms');
+    });
+
+    qs('#restartRecover').addEventListener('click', () => {
+      qs('#recoverStepVerify').classList.add('hidden');
+      qs('#recoverStepRequest').classList.remove('hidden');
+      hideAlert(recoverAlert);
+    });
+
+    qs('#loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideAlert(loginAlert);
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      try {
+        const data = await api('/login', {
+          method: 'POST',
+          body: {
+            username: qs('#username').value.trim(),
+            password: qs('#password').value,
+            deviceId: Isoft.getDeviceId(),
+            deviceLabel: Isoft.getDeviceLabel()
+          }
+        });
+        setSession(data.token, data.user);
+        window.location.href = '/app.html';
+      } catch (err) {
+        showAlert(loginAlert, err.message || 'Falha no login.');
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    qs('#sendRecover').addEventListener('click', async () => {
+      hideAlert(recoverAlert);
+      const method = qs('#recoverMethod').value;
+      const body = { method };
+      if (method === 'email') body.email = qs('#recoverEmail').value.trim();
+      else body.phone = qs('#recoverPhone').value.trim();
+
+      try {
+        const data = await api('/recover', { method: 'POST', body });
+        recoverContext = {
+          method,
+          email: data.email || body.email || '',
+          phone: data.phone || body.phone || ''
+        };
+        let msg = data.message || 'Código enviado.';
+        if (data.previewCode) msg += ` Código de teste: ${data.previewCode}`;
+        showAlert(recoverAlert, msg, 'ok');
+        qs('#recoverStepRequest').classList.add('hidden');
+        qs('#recoverStepVerify').classList.remove('hidden');
+      } catch (err) {
+        showAlert(recoverAlert, err.message || 'Não foi possível enviar o código.');
+      }
+    });
+
+    qs('#verifyRecover').addEventListener('click', async () => {
+      hideAlert(recoverAlert);
+      const password = qs('#newPassword').value;
+      const confirm = qs('#confirmPassword').value;
+      if (!password || password.length < 6) {
+        showAlert(recoverAlert, 'A senha deve ter pelo menos 6 caracteres.');
+        return;
+      }
+      if (password !== confirm) {
+        showAlert(recoverAlert, 'As senhas não coincidem.');
+        return;
+      }
+
+      const path =
+        recoverContext.method === 'sms' ? '/recover/sms/verify' : '/recover/email/verify';
+      const body = {
+        code: qs('#recoverCode').value.trim(),
+        newPassword: password
+      };
+      if (recoverContext.method === 'sms') body.phone = recoverContext.phone;
+      else body.email = recoverContext.email;
+
+      try {
+        const data = await api(path, { method: 'POST', body });
+        showAlert(recoverAlert, data.message || 'Senha atualizada. Pode entrar.', 'ok');
+        setTimeout(() => {
+          recoverPanel.classList.add('hidden');
+          loginPanel.classList.remove('hidden');
+        }, 1200);
+      } catch (err) {
+        showAlert(recoverAlert, err.message || 'Código inválido.');
+      }
+    });
+  </script>
+</body>
+</html>

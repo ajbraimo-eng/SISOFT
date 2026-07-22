@@ -2,17 +2,6 @@
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  const mobileLogin = document.querySelector("[data-mobile-login]");
-  const navLinks = document.querySelector(".nav-links");
-  if (mobileLogin && navLinks) {
-    const sync = () => {
-      const hideNav = window.matchMedia("(max-width: 860px)").matches;
-      mobileLogin.hidden = !hideNav;
-    };
-    sync();
-    window.addEventListener("resize", sync);
-  }
-
   const reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(

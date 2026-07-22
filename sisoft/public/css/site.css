@@ -214,10 +214,8 @@ textarea {
   color: var(--foam);
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+.nav-cta {
+  flex-shrink: 0;
 }
 
 .btn {
@@ -274,21 +272,21 @@ textarea {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 1.5rem 2rem;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 1.25rem 2.25rem;
   align-items: center;
 }
 
 .hero-copy {
   position: relative;
   z-index: 2;
-  max-width: 36rem;
+  max-width: 38rem;
 }
 
 .brand-mark {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
   font-family: var(--font-display);
-  font-size: clamp(3.6rem, 9vw, 5.6rem);
+  font-size: clamp(3.4rem, 8.5vw, 5.2rem);
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 0.92;
@@ -298,12 +296,12 @@ textarea {
 }
 
 .hero h1 {
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.85rem;
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.25;
+  line-height: 1.3;
   color: rgba(244, 248, 255, 0.92);
   animation: rise 0.9s var(--ease) 0.08s both;
 }
@@ -319,25 +317,28 @@ textarea {
 .hero-features {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.1rem;
   margin: 0 0 1.75rem;
   animation: rise 0.9s var(--ease) 0.24s both;
 }
 
 .hero-feature-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 0.55rem;
-  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0.65rem;
+  border-radius: 1rem;
   overflow: hidden;
-  border: 1px solid rgba(62, 203, 255, 0.35);
-  box-shadow: 0 0 16px rgba(62, 203, 255, 0.2);
+  border: 1px solid rgba(62, 203, 255, 0.28);
+  background: rgba(5, 13, 42, 0.85);
+  box-shadow: 0 0 18px rgba(62, 203, 255, 0.18);
 }
 
 .hero-feature-icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  transform: scale(1.08);
 }
 
 .hero-feature h3 {
@@ -363,26 +364,31 @@ textarea {
   z-index: 1;
   display: grid;
   place-items: center;
-  min-height: 480px;
+  min-height: 520px;
   animation: float-in 1.2s var(--ease) both;
 }
 
 .hero-glow {
   position: absolute;
-  width: 70%;
-  height: 55%;
+  width: 78%;
+  height: 62%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(62, 203, 255, 0.35), transparent 70%);
-  filter: blur(8px);
+  background: radial-gradient(circle, rgba(62, 203, 255, 0.42), transparent 70%);
+  filter: blur(10px);
   animation: pulse-glow 5s ease-in-out infinite;
 }
 
 .hero-product {
   position: relative;
   z-index: 2;
-  width: min(100%, 520px);
-  border-radius: 1.5rem;
-  filter: drop-shadow(0 28px 60px rgba(4, 12, 40, 0.55));
+  width: min(100%, 560px);
+  border-radius: 1.75rem;
+  border: 1px solid rgba(62, 203, 255, 0.2);
+  background: rgba(5, 13, 42, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(62, 203, 255, 0.08),
+    0 28px 70px rgba(4, 12, 40, 0.55),
+    0 0 40px rgba(62, 203, 255, 0.12);
   animation: float-product 6s ease-in-out infinite;
 }
 
@@ -501,7 +507,9 @@ textarea {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
+  object-position: center;
   border-radius: 1rem;
+  background: #050d2a;
 }
 
 .service-card h3 {

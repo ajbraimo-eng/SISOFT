@@ -21,24 +21,61 @@
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
-    <div class="site-bg" aria-hidden="true"></div>
+    <div class="site-bg" aria-hidden="true">
+      <svg class="bg-waves" viewBox="0 0 1200 900" preserveAspectRatio="xMaxYMid slice">
+        <defs>
+          <linearGradient id="w1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a6cff" stop-opacity="0.55" />
+            <stop offset="100%" stop-color="#00d4ff" stop-opacity="0.15" />
+          </linearGradient>
+          <linearGradient id="w2" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.45" />
+            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1" />
+          </linearGradient>
+          <linearGradient id="w3" x1="0.2" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#67e8f9" stop-opacity="0.35" />
+            <stop offset="100%" stop-color="#0284c7" stop-opacity="0.08" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#w1)"
+          d="M620,0 C780,120 920,80 1200,160 L1200,520 C980,480 860,560 720,500 C580,440 500,300 620,0 Z"
+        />
+        <path
+          fill="url(#w2)"
+          d="M540,180 C760,140 980,260 1200,220 L1200,780 C980,820 820,700 680,740 C540,780 420,560 540,180 Z"
+        />
+        <path
+          fill="url(#w3)"
+          d="M700,320 C900,280 1050,420 1200,380 L1200,900 C1000,860 860,920 700,860 C540,800 520,480 700,320 Z"
+        />
+      </svg>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+    </div>
 
     <header class="nav">
-      <div class="wrap">
-        <div class="nav-inner glass">
-          <a class="brand" href="/" aria-label="Sisoft">
-            <img src="/assets/logo.png" alt="Sisoft" width="44" height="44" />
-            <span>Sisoft</span>
-          </a>
-          <nav aria-label="Principal">
-            <ul class="nav-links">
-              <li><a href="#servicos">Serviços</a></li>
-              <li><a href="#porque">Porquê</a></li>
-              <li><a href="#contacto">Contacto</a></li>
-              <li><a class="btn btn-white" href="/login.html">Painel</a></li>
-            </ul>
-          </nav>
-          <a class="btn btn-white" href="/login.html" hidden data-mobile-login>Painel</a>
+      <div class="wrap nav-inner">
+        <a class="brand" href="/" aria-label="Sisoft">
+          <img src="/assets/logo.png" alt="Sisoft" width="44" height="44" />
+          <span>Sisoft</span>
+        </a>
+        <nav aria-label="Principal">
+          <ul class="nav-links">
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#porque">Porquê</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-cyan" href="/login.html">Painel</a>
+          <a class="btn btn-cyan" href="/login.html" hidden data-mobile-login>Painel</a>
         </div>
       </div>
     </header>
@@ -53,24 +90,46 @@
               Reparação de equipamentos, criação de sites e apps, design, redes e suporte técnico —
               soluções práticas com acompanhamento próximo.
             </p>
+
+            <div class="hero-features">
+              <article class="hero-feature">
+                <div class="hero-feature-icon" aria-hidden="true">
+                  <img src="/assets/card-repair.png" alt="" width="48" height="48" />
+                </div>
+                <h3>Reparação</h3>
+                <p>Computadores, portáteis e equipamentos com diagnóstico e manutenção.</p>
+              </article>
+              <article class="hero-feature">
+                <div class="hero-feature-icon" aria-hidden="true">
+                  <img src="/assets/card-web.png" alt="" width="48" height="48" />
+                </div>
+                <h3>Sites & apps</h3>
+                <p>Websites e aplicações à medida do seu negócio.</p>
+              </article>
+              <article class="hero-feature">
+                <div class="hero-feature-icon" aria-hidden="true">
+                  <img src="/assets/card-design.png" alt="" width="48" height="48" />
+                </div>
+                <h3>Design</h3>
+                <p>Identidade visual, logótipos e interfaces digitais.</p>
+              </article>
+            </div>
+
             <div class="hero-cta">
-              <a class="btn btn-white" href="#servicos">Explorar serviços</a>
-              <a class="btn btn-ghost" href="#contacto">Pedir orçamento</a>
+              <a class="btn btn-cyan btn-lg" href="#contacto">Pedir orçamento</a>
             </div>
           </div>
 
-          <div class="hero-visual">
-            <span class="orb orb-1" aria-hidden="true"></span>
-            <span class="orb orb-2" aria-hidden="true"></span>
-            <div class="hero-visual-frame">
-              <img
-                src="/assets/hero-3d.png"
-                alt="Ilustração 3D de tecnologia e infraestrutura digital"
-                width="1280"
-                height="720"
-                decoding="async"
-              />
-            </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-glow"></div>
+            <img
+              class="hero-product"
+              src="/assets/hero-3d.png"
+              alt=""
+              width="1280"
+              height="720"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
@@ -82,29 +141,29 @@
             <p>Da reparação ao digital — a Sisoft cobre o essencial para a sua operação.</p>
           </div>
           <div class="service-grid">
-            <article class="service-card glass reveal">
+            <article class="service-card reveal">
               <img src="/assets/card-repair.png" alt="" width="512" height="512" />
               <h3>Reparação</h3>
               <p>Computadores, portáteis e equipamentos com diagnóstico e manutenção.</p>
-              <a class="btn btn-white" href="#contacto">Pedir</a>
+              <a class="btn btn-cyan" href="#contacto">Pedir</a>
             </article>
-            <article class="service-card glass reveal">
+            <article class="service-card reveal">
               <img src="/assets/card-web.png" alt="" width="512" height="512" />
               <h3>Sites & apps</h3>
               <p>Websites e aplicações à medida do seu negócio.</p>
-              <a class="btn btn-white" href="#contacto">Pedir</a>
+              <a class="btn btn-cyan" href="#contacto">Pedir</a>
             </article>
-            <article class="service-card glass reveal">
+            <article class="service-card reveal">
               <img src="/assets/card-design.png" alt="" width="512" height="512" />
               <h3>Design</h3>
               <p>Identidade visual, logótipos e interfaces digitais.</p>
-              <a class="btn btn-white" href="#contacto">Pedir</a>
+              <a class="btn btn-cyan" href="#contacto">Pedir</a>
             </article>
-            <article class="service-card glass reveal">
+            <article class="service-card reveal">
               <img src="/assets/card-network.png" alt="" width="512" height="512" />
               <h3>Redes</h3>
               <p>Wi-Fi, infraestrutura e ligação estável para a equipa.</p>
-              <a class="btn btn-white" href="#contacto">Pedir</a>
+              <a class="btn btn-cyan" href="#contacto">Pedir</a>
             </article>
           </div>
         </div>
@@ -112,7 +171,7 @@
 
       <section class="section" id="porque">
         <div class="wrap why-grid">
-          <div class="why-copy glass reveal">
+          <div class="why-copy reveal">
             <h2>Tecnologia com acompanhamento real</h2>
             <p>
               Explicamos o problema, propomos a solução e acompanhamos a implementação — para a
@@ -125,7 +184,7 @@
               <li>Suporte depois da entrega</li>
             </ul>
           </div>
-          <aside class="panel glass reveal" aria-label="Áreas de actuação">
+          <aside class="panel reveal" aria-label="Áreas de actuação">
             <p class="panel-label">Áreas de actuação</p>
             <div class="meter">
               <div class="meter-row">
@@ -147,13 +206,13 @@
 
       <section class="section" id="contacto">
         <div class="wrap contact-grid">
-          <div class="contact-side glass reveal">
+          <div class="contact-side reveal">
             <h2>Fale com a Sisoft</h2>
             <p class="contact-note">
               Conte o que precisa — reparação, site, app, design, rede ou outro serviço de
               informática.
             </p>
-            <p class="contact-alt" style="margin-top: 1.2rem">
+            <p class="contact-alt">
               Email:
               <a href="mailto:sisoftcenter@gmail.com">sisoftcenter@gmail.com</a>
             </p>
@@ -193,7 +252,7 @@
                 <textarea id="message" name="message" rows="4" required></textarea>
               </div>
               <p class="form-msg" id="contact-msg" role="alert" aria-live="polite"></p>
-              <button class="btn btn-white" type="submit">Enviar pedido</button>
+              <button class="btn btn-cyan" type="submit">Enviar pedido</button>
             </form>
           </div>
         </div>

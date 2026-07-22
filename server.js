@@ -2144,24 +2144,26 @@ function startServer(options = {}) {
   const openBrowser =
     options.openBrowser !== undefined
       ? Boolean(options.openBrowser)
-      : String(process.env.OPEN_BROWSER || '1') !== '0';
-  return new Promise((resolve, reject) => {
-    const server = app.listen(PORT, HOST, () => {
-      const urls = config.getAccessUrls();
-      console.log(`Servidor Sisoft a escutar em ${HOST}:${PORT}`);
-      urls.forEach((url) => console.log(`  → ${url}`));
-      if (config.PUBLIC_URL) {
-        console.log(`URL pública configurada: ${config.PUBLIC_URL}`);
-      }
-      reports.startMonthlyReportScheduler();
-      if (openBrowser) {
-        const target = `http://localhost:${PORT}/`;
-        const prefs = desktop.readSettings();
-        console.log(
-          `A abrir navegador${prefs.openFullscreen ? ' (ecrã inteiro)' : ''}: ${target}`
-        );
-        desktop.openInBrowser(target, { fullscreen: prefs.openFullscreen });
-      }
+      : String(process.env.OPEN_BROWSER || '0') !== '0';
+    return new Promise((resolve, reject) => {
+      const server = app.listen(PORT, HOST, () => {
+        const urls = config.getAccessUrls();
+        console.log(`Servidor Sisoft a escutar em ${HOST}:${PORT}`);
+        urls.forEach((url) => console.log(`  → ${url}`));
+        if (config.PUBLIC_URL) {
+          console.log(`URL pública configurada: ${config.PUBLIC_URL}`);
+        }
+        reports.startMonthlyReportScheduler();
+        if (openBrowser) {
+          const target = `http://localhost:${PORT}/`;
+          const prefs = desktop.readSettings();
+          console.log(
+            `A abrir navegador${prefs.openFullscreen ? ' (ecrã inteiro)' : ''}: ${target}`
+          );
+          desktop.openInBrowser(target, { fullscreen: prefs.openFullscreen });
+        } else {
+          console.log('Site Sisoft pronto. Abra http://localhost:' + PORT + '/');
+        }
       resolve(server);
     });
     server.on('error', reject);

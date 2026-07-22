@@ -243,7 +243,7 @@ input {
   animation: rise 0.9s var(--ease) both;
 }
 
-.brand-mark span {
+.brand-mark::first-letter {
   color: var(--signal);
 }
 

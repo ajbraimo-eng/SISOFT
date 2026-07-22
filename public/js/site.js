@@ -34,14 +34,14 @@
     reveals.forEach((el) => el.classList.add("is-visible"));
   }
 
-  const heroVisual = document.querySelector(".hero-visual svg");
-  if (heroVisual && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const stage = document.querySelector(".hero-stage");
+  if (stage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     window.addEventListener(
       "pointermove",
       (event) => {
-        const x = (event.clientX / window.innerWidth - 0.5) * 12;
-        const y = (event.clientY / window.innerHeight - 0.5) * 8;
-        heroVisual.style.transform = `translate(${x}px, ${y}px)`;
+        const x = (event.clientX / window.innerWidth - 0.5) * 14;
+        const y = (event.clientY / window.innerHeight - 0.5) * 10;
+        stage.style.transform = `translate(${x}px, ${y}px)`;
       },
       { passive: true }
     );

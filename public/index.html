@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/site.css" />
@@ -27,7 +27,7 @@
     <header class="nav">
       <div class="wrap nav-inner">
         <a class="brand" href="/" aria-label="Sisoft">
-          <img src="/assets/logo.svg" alt="Sisoft" width="36" height="36" />
+          <img src="/assets/logo.svg" alt="Sisoft" width="42" height="42" />
           <span>Sisoft</span>
         </a>
         <nav aria-label="Principal">
@@ -44,66 +44,56 @@
 
     <main id="conteudo">
       <section class="hero">
-        <div class="hero-visual" aria-hidden="true">
-          <svg viewBox="0 0 820 640" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="g1" x1="120" y1="80" x2="700" y2="560" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#1FA88A" stop-opacity="0.55" />
-                <stop offset="0.55" stop-color="#123447" stop-opacity="0.35" />
-                <stop offset="1" stop-color="#F0A202" stop-opacity="0.2" />
-              </linearGradient>
-              <linearGradient id="g2" x1="260" y1="140" x2="620" y2="480" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#E8F2F0" stop-opacity="0.18" />
-                <stop offset="1" stop-color="#E8F2F0" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M90 470 L210 250 L340 470 Z"
-              stroke="url(#g1)"
-              stroke-width="2"
-              fill="url(#g2)"
-            />
-            <path
-              d="M280 490 L430 180 L580 490 Z"
-              stroke="#E8F2F0"
-              stroke-opacity="0.35"
-              stroke-width="2"
-              fill="rgba(31,168,138,0.08)"
-            />
-            <path
-              d="M480 500 L640 220 L780 500 Z"
-              stroke="#F0A202"
-              stroke-opacity="0.55"
-              stroke-width="2"
-              fill="rgba(240,162,2,0.06)"
-            />
-            <rect x="180" y="390" width="420" height="140" rx="4" stroke="#E8F2F0" stroke-opacity="0.2" />
-            <path d="M180 430 H600" stroke="#E8F2F0" stroke-opacity="0.12" />
-            <path d="M180 470 H600" stroke="#E8F2F0" stroke-opacity="0.12" />
-            <circle cx="230" cy="410" r="5" fill="#F0A202" />
-            <circle cx="270" cy="410" r="5" fill="#1FA88A" />
-            <rect x="320" y="448" width="120" height="10" rx="2" fill="#1FA88A" fill-opacity="0.7" />
-            <rect x="320" y="488" width="180" height="10" rx="2" fill="#F0A202" fill-opacity="0.55" />
-            <path
-              d="M120 160 C220 120, 320 200, 420 150 C520 100, 620 140, 700 90"
-              stroke="#E8F2F0"
-              stroke-opacity="0.18"
-              stroke-width="1.5"
-              stroke-dasharray="6 10"
-            />
-          </svg>
-        </div>
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="brand-mark" aria-label="Sisoft">Sisoft</p>
+            <h1>Stock, oficina e faturação sob o mesmo tecto.</h1>
+            <p class="hero-lead">
+              O Sisoft organiza armazém, obras de oficina, cotações, facturas e a equipa — com
+              controlo claro no dia a dia.
+            </p>
 
-        <div class="wrap hero-content">
-          <p class="brand-mark" aria-label="Sisoft">Sisoft</p>
-          <h1>Stock, oficina e faturação sob o mesmo tecto.</h1>
-          <p>
-            O Sisoft organiza armazém, obras de oficina, cotações, facturas e a equipa — com
-            controlo claro no dia a dia.
-          </p>
-          <div class="hero-cta">
-            <a class="btn btn-signal" href="/login.html">Aceder ao sistema</a>
-            <a class="btn btn-ghost" href="#modulos">Ver módulos</a>
+            <div class="hero-features">
+              <article class="hero-feature">
+                <div class="hero-feature-icon" aria-hidden="true">01</div>
+                <h3>Armazém & inventário</h3>
+                <p>Entradas, saídas e stock actualizado para saber o que tem e o que falta.</p>
+              </article>
+              <article class="hero-feature">
+                <div class="hero-feature-icon" aria-hidden="true">02</div>
+                <h3>Obras & requisições</h3>
+                <p>Registe veículos em serviço e peça materiais do armazém com histórico.</p>
+              </article>
+              <article class="hero-feature">
+                <div class="hero-feature-icon" aria-hidden="true">03</div>
+                <h3>Cotações & facturas</h3>
+                <p>Crie propostas, emita facturas e mantenha o histórico financeiro organizado.</p>
+              </article>
+            </div>
+
+            <div class="hero-cta">
+              <a class="btn btn-signal" href="/login.html">Aceder ao sistema</a>
+            </div>
+          </div>
+
+          <div class="hero-stage" aria-hidden="true">
+            <div class="wave wave-1"></div>
+            <div class="wave wave-2"></div>
+            <div class="wave wave-3"></div>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <div class="hero-photo">
+              <img
+                src="/assets/sisoft-hero.png"
+                alt=""
+                width="840"
+                height="1120"
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -188,14 +178,14 @@
       </section>
 
       <section class="section cta" id="contacto">
-        <div class="wrap cta-box reveal">
-          <h2>Pronto para pôr a Sisoft a trabalhar consigo?</h2>
-          <p>
-            Entre no sistema ou fale connosco para activar a sua instalação.
-          </p>
-          <div class="cta-actions">
-            <a class="btn btn-signal" href="/login.html">Entrar no Sisoft</a>
-            <a class="btn btn-ghost" href="mailto:sisoftcenter@gmail.com">sisoftcenter@gmail.com</a>
+        <div class="wrap">
+          <div class="cta-box reveal">
+            <h2>Pronto para pôr a Sisoft a trabalhar consigo?</h2>
+            <p>Entre no sistema ou fale connosco para activar a sua instalação.</p>
+            <div class="cta-actions">
+              <a class="btn btn-signal" href="/login.html">Entrar no Sisoft</a>
+              <a class="btn btn-ghost" href="mailto:sisoftcenter@gmail.com">sisoftcenter@gmail.com</a>
+            </div>
           </div>
         </div>
       </section>

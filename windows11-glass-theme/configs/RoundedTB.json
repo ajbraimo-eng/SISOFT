@@ -1,0 +1,13 @@
+{
+  "CornerRadius": 18,
+  "MarginTop": 12,
+  "MarginLeft": 12,
+  "MarginRight": 12,
+  "MarginBottom": 12,
+  "DynamicMode": true,
+  "ShowSystemTray": true,
+  "MergeTraySegments": true,
+  "IsEnabled": true,
+  "SimpleTaskbar": false,
+  "Notes": "Importe ou replique estes valores no RoundedTB. Dynamic Mode encolhe a barra como um dock centrado."
+}

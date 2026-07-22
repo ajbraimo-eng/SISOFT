@@ -1,0 +1,26 @@
+Windows Registry Editor Version 5.00
+
+; Glass Dock — tweaks leves (faça um ponto de restauro antes)
+; Transparência do sistema
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"EnableTransparency"=dword:00000001
+"AppsUseLightTheme"=dword:00000001
+"SystemUsesLightTheme"=dword:00000001
+
+; Taskbar centrada (Windows 11)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAl"=dword:00000001
+"TaskbarDa"=dword:00000000
+"ShowTaskViewButton"=dword:00000001
+"TaskbarMn"=dword:00000000
+
+; Pesquisa na taskbar: ícone apenas (a pesquisa principal fica no Rainmeter)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000001
+
+; Accent suave azul-claro (ARGB)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
+"ColorPrevalence"=dword:00000000
+"AccentColor"=dword:00f0d4a8
+"ColorizationColor"=dword:c4a8d4f0
+"EnableAeroPeek"=dword:00000001
